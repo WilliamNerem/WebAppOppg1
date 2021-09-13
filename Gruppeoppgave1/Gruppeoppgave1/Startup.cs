@@ -38,20 +38,15 @@ namespace Gruppeoppgave1
             app.UseDefaultFiles();
             app.UseStaticFiles();
 
-
-            /*
             app.UseRouting();
-            
+
+
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapGet("/halla", async context =>
-                {
-                    await context.Response.WriteAsync("Hello World!");
-                });
+                endpoints.MapControllers();
             });
-            */
-            
-            
+
+
         }
     }
 }
