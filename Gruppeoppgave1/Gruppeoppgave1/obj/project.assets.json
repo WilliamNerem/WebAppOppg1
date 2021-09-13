@@ -6185,19 +6185,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\maren\\.nuget\\packages\\": {}
+    "C:\\Users\\Martin\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\maren\\OneDrive\\Dokumenter\\IT\\Webapplikasjoner\\Oblig 1\\WebAppOppg1\\Gruppeoppgave1\\Gruppeoppgave1\\Gruppeoppgave1.csproj",
+      "projectUniqueName": "C:\\Users\\Martin\\Desktop\\Skole\\Webapplikasjoner\\WebAppOppg1\\Gruppeoppgave1\\Gruppeoppgave1\\Gruppeoppgave1.csproj",
       "projectName": "Gruppeoppgave1",
-      "projectPath": "C:\\Users\\maren\\OneDrive\\Dokumenter\\IT\\Webapplikasjoner\\Oblig 1\\WebAppOppg1\\Gruppeoppgave1\\Gruppeoppgave1\\Gruppeoppgave1.csproj",
-      "packagesPath": "C:\\Users\\maren\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\maren\\OneDrive\\Dokumenter\\IT\\Webapplikasjoner\\Oblig 1\\WebAppOppg1\\Gruppeoppgave1\\Gruppeoppgave1\\obj\\",
+      "projectPath": "C:\\Users\\Martin\\Desktop\\Skole\\Webapplikasjoner\\WebAppOppg1\\Gruppeoppgave1\\Gruppeoppgave1\\Gruppeoppgave1.csproj",
+      "packagesPath": "C:\\Users\\Martin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Martin\\Desktop\\Skole\\Webapplikasjoner\\WebAppOppg1\\Gruppeoppgave1\\Gruppeoppgave1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\maren\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Martin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
