@@ -35,21 +35,23 @@ namespace Gruppeoppgave1
                 DBInit.init(app);
             }
 
-            DefaultFilesOptions options = new DefaultFilesOptions();
-            options.DefaultFileNames.Clear();
-            options.DefaultFileNames.Add("index.html");
-            app.UseDefaultFiles(options);
+            app.UseDefaultFiles();
             app.UseStaticFiles();
 
-            app.UseRouting();
 
+            /*
+            app.UseRouting();
+            
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapGet("/", async context =>
+                endpoints.MapGet("/halla", async context =>
                 {
                     await context.Response.WriteAsync("Hello World!");
                 });
             });
+            */
+            
+            
         }
     }
 }
