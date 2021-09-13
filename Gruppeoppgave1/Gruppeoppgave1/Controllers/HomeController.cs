@@ -41,6 +41,17 @@ namespace KundeOrdre.Controllers
                 return null;
             }
         }
-    }
 
+        public async Task<Strekning> HentEn(int id)
+        {
+            Strekning enStrekning = await _db.Strekning.FindAsync(id);
+            var hentetStrekning = new Strekning()
+            {
+                Id = enStrekning.Id,
+                Pris = enStrekning.Pris,
+                Navn = enStrekning.Navn
+            };
+            return hentetStrekning;
+        }
+    }
 }
