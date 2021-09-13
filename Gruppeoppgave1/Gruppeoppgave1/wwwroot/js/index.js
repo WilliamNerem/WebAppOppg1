@@ -1,5 +1,6 @@
 ﻿$(function () {
     hentAlleStrekninger();
+    datepicker();
 });
 
 function hentAlleStrekninger() {
@@ -17,3 +18,8 @@ function formaterStrekninger(strekninger) {
 
     $("#strekningene").html(ut);
 }
+
+function datepicker() {
+        $("#startdate").datepicker({ dateFormat: "dd-mm-yy" }).val()
+        $("#enddate").datepicker({ dateFormat: "dd-mm-yy" }).val()
+    };
