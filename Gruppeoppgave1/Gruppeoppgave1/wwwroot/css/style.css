@@ -1,2 +1,7 @@
 ﻿body {
 }
+
+.navbar {
+    padding: 0;
+    background-color: #031f38;
+}
