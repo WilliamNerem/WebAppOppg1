@@ -1,5 +1,6 @@
 ﻿using EF_2.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,5 +23,24 @@ namespace KundeOrdre.Controllers
         {
             return _db.Strekning.ToList();
         }
+
+        public async Task<List<Strekning>> HentAlle()
+        {
+            try
+            {
+                List<Strekning> alleStrekninger = await _db.Strekning.Select(k => new Strekning
+                {
+                    Id = k.Id,
+                    Navn = k.Navn,
+                    Pris = k.Pris
+                }).ToListAsync();
+                return alleStrekninger;
+            }
+            catch
+            {
+                return null;
+            }
+        }
     }
+
 }
