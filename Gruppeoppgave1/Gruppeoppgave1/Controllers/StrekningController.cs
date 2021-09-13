@@ -42,14 +42,14 @@ namespace Gruppeoppgave1.Controllers
             }
         }
 
-        public async Task<Strekning> HentEn(int id)
+        public async Task<Strekning> HentEn(int id) //får ikke inn en gyldig id ellerno piss
         {
             Strekning enStrekning = await _db.Strekning.FindAsync(id);
             var hentetStrekning = new Strekning()
             {
                 Id = enStrekning.Id,
-                Pris = enStrekning.Pris,
-                Navn = enStrekning.Navn
+                Navn = enStrekning.Navn,
+                Pris = enStrekning.Pris
             };
             return hentetStrekning;
         }

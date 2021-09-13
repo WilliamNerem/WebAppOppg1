@@ -39,12 +39,15 @@
 
     <form>
         <label>Velg strekning:</label>
-        <select id="strekningene"></select>
-        <input type="submit" value="Submit" />
+        <select id="strekningene" onchange="hentPris()"></select>
+        <br />
+        <label>Pris:</label>
+        <label id="pris"></label>
         <label>Velg fra dato:</label>
         <input type="text" id="startdate" size="30" />
         <label>Velg til dato:</label>
         <input type="text" id="enddate" size="30" />
     </form>
+    
 </body>
 </html>
