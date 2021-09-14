@@ -71,4 +71,21 @@ function ifValidering(variabel, sjekk, id) {
     } else {
         $(id).css({ visibility: "hidden" });
     }
+    $("#startdato").datepicker({
+        dateFormat: "dd-mm-yy",
+        minDate: 0,
+        maxDate: 60,
+        onSelect: function () {
+            let datoParts = $("#startdato").split('-');
+            let dato = new Date(datoParts[0], datoParts[1], datoParts[2]);
+            let maksdato = new Date();
+            console.log($("#startdato").val());
+            maksdato.setDate(dato.getDate() + 10);
+           $("#sluttdato").datepicker({
+               dateFormat: "dd-mm-yy",
+               minDate: dato,
+               maxDate: maksdato
+            }).val();
+        }
+    })
 }
