@@ -65,17 +65,17 @@
             <table>
                 <tr>
                     <th><label>Fornavn:</label></th>
-                    <th><input id="fornavn" type="text" placeholder="Fornavn" /></th>
+                    <th><input id="fornavn" type="text" placeholder="Fornavn" required pattern="\b([A-ZÀ-ÿ][-,a-z. ']+[ ]*)+"/></th>
                     <th><p id="errorFornavn" style="visibility: hidden; color: red">Du må skrive inn ditt fornavn!</p></th>
                 </tr>
                 <tr>
                     <th><label>Etternavn:</label></th>
-                    <th><input id="etternavn" type="text" placeholder="Etternavn" /></th>
+                    <th><input id="etternavn" type="text" placeholder="Etternavn" required pattern="\b([A-ZÀ-ÿ][-,a-z. ']+[ ]*)+"/></th>
                     <th><p id="errorEtternavn" style="visibility: hidden; color: red">Du må skrive inn ditt etternavn!</p></th>
                 </tr>
                 <tr>
                     <th><label>Email:</label></th>
-                    <th><input id="email" type="text" placeholder="Email" /></th>
+                    <th><input id="email" type="text" placeholder="Email"/></th>
                     <th><p id="errorEmail" style="visibility: hidden; color: red">Du må skrive inn din email!</p></th>
                 </tr>
             </table>
