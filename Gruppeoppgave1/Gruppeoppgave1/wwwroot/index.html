@@ -62,23 +62,15 @@
             <br />
             <label>Informasjon om den som bestiller lol idk jeg kanke norsk</label>
             <br />
-            <table>
-                <tr>
-                    <th><label>Fornavn:</label></th>
-                    <th><input id="fornavn" type="text" placeholder="Fornavn" required pattern="\b([A-ZÀ-ÿ][-,a-z. ']+[ ]*)+"/></th>
-                    <th><p id="errorFornavn" style="visibility: hidden; color: red">Du må skrive inn ditt fornavn!</p></th>
-                </tr>
-                <tr>
-                    <th><label>Etternavn:</label></th>
-                    <th><input id="etternavn" type="text" placeholder="Etternavn" required pattern="\b([A-ZÀ-ÿ][-,a-z. ']+[ ]*)+"/></th>
-                    <th><p id="errorEtternavn" style="visibility: hidden; color: red">Du må skrive inn ditt etternavn!</p></th>
-                </tr>
-                <tr>
-                    <th><label>Email:</label></th>
-                    <th><input id="email" type="text" placeholder="Email"/></th>
-                    <th><p id="errorEmail" style="visibility: hidden; color: red">Du må skrive inn din email!</p></th>
-                </tr>
-            </table>
+            <label>Fornavn:</label>
+            <input id="fornavn" type="text" placeholder="Fornavn" pattern="\b([A-ZÀ-ÿ][-a-z ]+[ ]*)+" title="Fornavn starter med stor bokstav. Gyldige tegn: - og mellomrom" />
+            <p id="errorFornavn" style="visibility: hidden; color: red">Du må skrive inn ditt fornavn!</p>
+            <label>Etternavn:</label>
+            <input id="etternavn" type="text" placeholder="Etternavn" pattern="\b([A-ZÀ-ÿ][-a-z ]+[ ]*)+" title="Etternavn starter med stor bokstav. Gyldige tegn: - og mellomrom" />
+                <p id="errorEtternavn" style="visibility: hidden; color: red">Du må skrive inn ditt etternavn!</p>
+            <label>Email:</label>
+            <input id="email" type="text" placeholder="Email" pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$" title="Emaisdljsadj"/>
+            <p id="errorEmail" style="visibility: hidden; color: red">Du må skrive inn din email!</p>
             <input type="submit" value="Bestill">
         </form>
     </div>
