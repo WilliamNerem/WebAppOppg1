@@ -35,16 +35,10 @@ function hentPris() {
     });
 }
 
-function datepicker() {
-    $("#startdate").datepicker({ dateFormat: "dd-mm-yy" }).val();
-
-    $("#enddate").datepicker({ dateFormat: "dd-mm-yy" }).val();
-}
-
 function validerForm() {
     const valgtStrekning = $('#strekningene').val();
-    const valgtStartDato = $("#startdate").datepicker({ dateFormat: "dd-mm-yy" }).val();
-    const valgtSluttDato = $("#enddate").datepicker({ dateFormat: "dd-mm-yy" }).val();
+    const valgtStartDato = $("#startdato").datepicker({ dateFormat: "dd-mm-yy" }).val();
+    const valgtSluttDato = $("#sluttdato").datepicker({ dateFormat: "dd-mm-yy" }).val();
     const valgtAntallVoksne = $('#antallVoksne').val();
     const skrevetFornavn = $('#fornavn').val();
     const skrevetEtternavn = $('#etternavn').val();
@@ -71,21 +65,29 @@ function ifValidering(variabel, sjekk, id) {
     } else {
         $(id).css({ visibility: "hidden" });
     }
+}
+
+function datepicker() {
     $("#startdato").datepicker({
         dateFormat: "dd-mm-yy",
         minDate: 0,
         maxDate: 60,
-        onSelect: function () {
-            let datoParts = $("#startdato").split('-');
-            let dato = new Date(datoParts[0], datoParts[1], datoParts[2]);
-            let maksdato = new Date();
-            console.log($("#startdato").val());
-            maksdato.setDate(dato.getDate() + 10);
-           $("#sluttdato").datepicker({
-               dateFormat: "dd-mm-yy",
-               minDate: dato,
-               maxDate: maksdato
-            }).val();
-        }
     })
+}
+
+function datepickerSlutt() {
+    let datoParts = $("#startdato").val().split("-");
+    datoParts[1] = datoParts[1] - 1;
+
+    let dato = new Date(datoParts[2], datoParts[1], datoParts[0]);
+    let maksdato = new Date();
+    maksdato.setDate(dato.getDate() + 10);
+
+    $('#sluttdato').datepicker("destroy");
+    $('#sluttdato').val('');
+    $("#sluttdato").datepicker({
+        dateFormat: "dd-mm-yy",
+        minDate: dato,
+        maxDate: maksdato
+    });
 }

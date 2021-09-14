@@ -26,10 +26,10 @@
             <label id="pris"></label>
             <br />
             <label>Velg fra dato:</label>
-            <input type="text" id="startdate" size="10" />
+            <input type="text" id="startdato" size="10" onchange="datepickerSlutt()" />
             <p id="errorStartDato" style="visibility: hidden; color: red">Du må velge en fra dato!</p>
             <label>Velg til dato:</label>
-            <input type="text" id="enddate" size="10" />
+            <input type="text" id="sluttdato" size="10" />
             <p id="errorSluttDato" style="visibility: hidden; color: red">Du må velge en til dato!</p>
             <br />
             <label>Antall voksne:</label>
@@ -80,9 +80,6 @@
                 </tr>
             </table>
             <input type="submit" value="Bestill">
-            <input type="text" id="startdato" size="10" />
-            <label>Velg til dato:</label>
-            <input type="text" id="sluttdato" size="10" />
         </form>
     </div>
 </body>
