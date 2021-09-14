@@ -21,15 +21,15 @@ function formaterStrekninger(strekninger) {
 
 function hentPris() {
     const value = $('#strekningene').val();
-    const url = "strekning/henten?" + value;
+    const url = "Strekning/HentEn?id=" + value;
 
-    $.get(url, function (strekning) { //value blir sendt, men funker ikke
-        console.log(strekning);
+    $.get(url, function (strekning) {
         $("#pris").html(strekning.pris);
     });
 }
 
 function datepicker() {
-        $("#startdate").datepicker({ dateFormat: "dd-mm-yy" }).val()
-        $("#enddate").datepicker({ dateFormat: "dd-mm-yy" }).val()
-    };
+    $("#startdate").datepicker({ dateFormat: "dd-mm-yy" }).val();
+
+    $("#enddate").datepicker({ dateFormat: "dd-mm-yy" }).val();
+};
