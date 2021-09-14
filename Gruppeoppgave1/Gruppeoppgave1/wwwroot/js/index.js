@@ -46,39 +46,29 @@ function validerForm() {
     const valgtStartDato = $("#startdate").datepicker({ dateFormat: "dd-mm-yy" }).val();
     const valgtSluttDato = $("#enddate").datepicker({ dateFormat: "dd-mm-yy" }).val();
     const valgtAntallVoksne = $('#antallVoksne').val();
+    const skrevetFornavn = $('#fornavn').val();
+    const skrevetEtternavn = $('#etternavn').val();
+    const skrevetEmail = $('#email').val();
     let error = false;
 
-    console.log(valgtStartDato);
-
-    if (valgtStrekning == null) {
-        $('#errorStrekning').css({ visibility: "visible" });
-        error = true;
-    } else {
-        $('#errorStrekning').css({ visibility: "hidden" });
-    }
-
-    if (valgtStartDato == "") {
-        $('#errorStartDato').css({ visibility: "visible" });
-        error = true;
-    } else {
-        $('#errorStartDato').css({ visibility: "hidden" });
-    }
-
-    if (valgtSluttDato == "") {
-        $('#errorSluttDato').css({ visibility: "visible" });
-        error = true;
-    } else {
-        $('#errorSluttDato').css({ visibility: "hidden" });
-    }
-
-    if (valgtAntallVoksne == 0) {
-        $('#errorAntallVoksne').css({ visibility: "visible" });
-        error = true;
-    } else {
-        $('#errorAntallVoksne').css({ visibility: "hidden" });
-    }
-
+    error = ifValidering(valgtStrekning, null, '#errorStrekning');
+    error = ifValidering(valgtStartDato, "", '#errorStartDato');
+    error = ifValidering(valgtSluttDato, "", '#errorSluttDato');
+    error = ifValidering(valgtAntallVoksne, 0, '#errorAntallVoksne');
+    error = ifValidering(skrevetFornavn, "", '#errorFornavn');
+    error = ifValidering(skrevetEtternavn, "", '#errorEtternavn');
+    error = ifValidering(skrevetEmail, "", '#errorEmail');
+    
     if (error) {
         return false;
+    }
+}
+
+function ifValidering(variabel, sjekk, id) {
+    if (variabel == sjekk) {
+        $(id).css({ visibility: "visible" });
+        return true;
+    } else {
+        $(id).css({ visibility: "hidden" });
     }
 }
