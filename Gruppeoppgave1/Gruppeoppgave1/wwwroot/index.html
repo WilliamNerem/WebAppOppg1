@@ -4,39 +4,16 @@
     <meta charset="utf-8" />
     <title>Home Page</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="js/index.js"></script>
-    <link type="text/css" rel="stylesheet" href="css/style.css" />
-    <link type="text/css" rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css" />
+    <script src="js/includeHTML.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container-fluid">
-            <a class="navbar-brand bg-light" href="#">
-                <img src="images/Color_Line_color_horizontal.svg" alt="" width="100" height="50">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active text-light" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-light" href="#">Link</a>
-                    </li>
-                </ul>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-info" type="submit">Search</button>
-                </form>
-            </div>
-        </div>
-    </nav>
-
+    <div id="dynHTML"></div>
+    <div class="container">
+        dette er home page
+        <a href="Pages/home.html">HomePage</a>
+    </div>
     <form>
         <label>Velg strekning:</label>
         <select id="strekningene" onchange="hentPris()"></select>
@@ -49,6 +26,5 @@
         <label>Velg til dato:</label>
         <input type="text" id="enddate" size="30" />
     </form>
-    
 </body>
 </html>
