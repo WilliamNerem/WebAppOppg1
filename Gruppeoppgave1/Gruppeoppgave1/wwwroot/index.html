@@ -11,25 +11,24 @@
     <link type="text/css" rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css" />
     <script src="lib/bootstrap/js/bootstrap.min.js"></script>
     <script src="js/index.js"></script>
-    <script src="js/includeHTML.js"></script>
 </head>
 <body>
     <div id="dynHTML"></div>
     <div class="container">
         dette er home page
         <a href="Pages/home.html">HomePage</a>
+        <form autocomplete="off">
+            <label>Velg strekning:</label>
+            <select id="strekningene" onchange="hentPris()"></select>
+            <br />
+            <label>Pris:</label>
+            <label id="pris"></label>
+            <br />
+            <label>Velg fra dato:</label>
+            <input type="text" id="startdate" size="10" />
+            <label>Velg til dato:</label>
+            <input type="text" id="enddate" size="10" />
+        </form>
     </div>
-    <form>
-        <label>Velg strekning:</label>
-        <select id="strekningene" onchange="hentPris()"></select>
-        <br />
-        <label>Pris:</label>
-        <label id="pris"></label>
-        <br />
-        <label>Velg fra dato:</label>
-        <input type="text" id="startdate" size="25" />
-        <label>Velg til dato:</label>
-        <input type="text" id="enddate" size="25" />
-    </form>
 </body>
 </html>
