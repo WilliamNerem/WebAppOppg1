@@ -17,17 +17,49 @@
     <div class="container">
         dette er home page
         <a href="Pages/home.html">HomePage</a>
-        <form autocomplete="off">
+        <form autocomplete="off" action="Pages/betaling.html" onsubmit="return validerForm()">
             <label>Velg strekning:</label>
             <select id="strekningene" onchange="hentPris()"></select>
+            <p id="errorStrekning" style="visibility: hidden; color: red">Du må velge en strekning!</p>
             <br />
             <label>Pris:</label>
             <label id="pris"></label>
             <br />
             <label>Velg fra dato:</label>
             <input type="text" id="startdate" size="10" />
+            <p id="errorStartDato" style="visibility: hidden; color: red">Du må velge en fra dato!</p>
             <label>Velg til dato:</label>
             <input type="text" id="enddate" size="10" />
+            <p id="errorSluttDato" style="visibility: hidden; color: red">Du må velge en til dato!</p>
+            <br />
+            <label>Antall voksne:</label>
+            <select id="antallVoksne" onchange="hentPris()">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+            </select>
+            <p id="errorAntallVoksne" style="visibility: hidden; color: red">Du må velge minst én voksen!</p>
+            <label>Antall barn (under 16):</label>
+            <select id="antallBarn" onchange="hentPris()">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+            </select>
+            <input type="submit" value="Bestill">
         </form>
     </div>
 </body>
