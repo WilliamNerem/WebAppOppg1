@@ -21,6 +21,16 @@ function validerForm() {
         return false;
     }
 
+    saveValues();
+
+}
+
+function saveValues() {
+    localStorage.setItem("antallVoksne", $('#antallVoksne').val());
+    localStorage.setItem("antallBarn", $('#antallBarn').val());
+    localStorage.setItem("fornavn", $('#fornavn').val());
+    localStorage.setItem("etternavn", $('#etternavn').val());
+    localStorage.setItem("email", $('#email').val());
 }
 
 function ifValidering(variabel, sjekk, id) {
