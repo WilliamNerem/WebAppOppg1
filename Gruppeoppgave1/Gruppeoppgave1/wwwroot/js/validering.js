@@ -119,18 +119,24 @@ function datepicker() {
 }
 
 function datepickerSlutt() {
-    let datoParts = $("#startdato").val().split("-");
-    datoParts[1] = datoParts[1] - 1;
+    $("#sluttdato").css({ visibility: "hidden" });
+    $("#labeltildato").css({ visibility: "hidden" });
+    if ($("#turvalg option:selected").val() === "Tur/Retur") {
+        $("#labeltildato").css({ visibility: "visible" });
+        $("#sluttdato").css({ visibility: "visible" });
+        let datoParts = $("#startdato").val().split("-");
+        datoParts[1] = datoParts[1] - 1;
 
-    let dato = new Date(datoParts[2], datoParts[1], datoParts[0]);
-    let maksdato = new Date();
-    maksdato.setDate(dato.getDate() + 10);
+        let dato = new Date(datoParts[2], datoParts[1], datoParts[0]);
+        let maksdato = new Date();
+        maksdato.setDate(dato.getDate() + 10);
 
-    $('#sluttdato').datepicker("destroy");
-    $('#sluttdato').val('');
-    $("#sluttdato").datepicker({
-        dateFormat: "dd-mm-yy",
-        minDate: dato,
-        maxDate: maksdato
-    });
+        $('#sluttdato').datepicker("destroy");
+        $('#sluttdato').val('');
+        $("#sluttdato").datepicker({
+            dateFormat: "dd-mm-yy",
+            minDate: dato,
+            maxDate: maksdato
+        });
+    }
 }

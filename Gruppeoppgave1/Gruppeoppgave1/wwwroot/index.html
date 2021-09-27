@@ -13,10 +13,10 @@
     <script src="/js/index.js"></script>
     <script src="js/validering.js"></script>
 </head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-light">
+<body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand bg-light" href="#">
+            <a class="navbar-brand bg-light" href="/index.html">
                 <img src="/images/Color_Line_color_horizontal.svg" alt="" width="100" height="50">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,62 +38,84 @@
             </div>
         </div>
     </nav>
+    <img src="images/color-line-bg.png" alt="Bilde av Color Line som seiler" class="img-bg-top"/>
     <div class="container">
-        <form autocomplete="off" action="Pages/betaling.html" onsubmit="return validerForm()">
-            <label>Velg strekning:</label>
-            <select id="strekningene" onchange="hentPris()"></select>
-            <p id="errorStrekning" style="visibility: hidden; color: red">Du må velge en strekning!</p>
-            <br />
-            <label>Pris:</label>
-            <label id="pris"></label>
-            <br />
-            <label>Velg fra dato:</label>
-            <input type="text" id="startdato" size="10" onchange="datepickerSlutt()" />
-            <p id="errorStartDato" style="visibility: hidden; color: red">Du må velge en fra dato!</p>
-            <label>Velg til dato:</label>
-            <input type="text" id="sluttdato" size="10" />
-            <p id="errorSluttDato" style="visibility: hidden; color: red">Du må velge en til dato!</p>
-            <br />
-            <label>Antall voksne:</label>
-            <select id="antallVoksne" onchange="hentPris()">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-            </select>
-            <p id="errorAntallVoksne" style="visibility: hidden; color: red">Du må velge minst én voksen!</p>
-            <label>Antall barn (under 16):</label>
-            <select id="antallBarn" onchange="hentPris()">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-            </select>
-            <br />
-            <label>Informasjon om den som bestiller lol idk jeg kanke norsk</label>
-            <br />
-            <label>Fornavn:</label>
-            <input id="fornavn" type="text" placeholder="Fornavn" />
-            <p id="errorFornavn" style="visibility: hidden; color: red">Du må skrive inn ditt fornavn!</p>
-            <label>Etternavn:</label>
-            <input id="etternavn" type="text" placeholder="Etternavn" />
-                <p id="errorEtternavn" style="visibility: hidden; color: red">Du må skrive inn ditt etternavn!</p>
-            <label>Email:</label>
-            <input id="email" type="text" placeholder="Email" />
-            <p id="errorEmail" style="visibility: hidden; color: red">Du må skrive inn din email!</p>
-            <input type="submit" value="Bestill">
+        <form class="row g-2 form-container" autocomplete="off" action="Pages/betaling.html" onsubmit="return validerForm()">
+        <h2 class="text-center">Bestilling av reise:</h2>
+            <hr class="mb-3 divider" />
+            <div class="col-6 row">
+                <div class="mb-3">
+                    <h4>Reiseinformasjon</h4>
+                </div>
+                <div class="col-12">
+                    <label for="strekningene" class="form-label">Velg strekning:</label>
+                    <select id="strekningene" class="form-select" onchange="hentPris()"></select>
+                    <div id="errorStrekning" class="form-text" style="visibility: hidden; color: red">Du må velge en strekning!</div>
+                    <label>Velg enkel eller tur/retur:</label>
+                    <select id="turvalg" onchange="datepickerSlutt()">
+                        <option value="Enkel">Enkel</option>
+                        <option value="Tur/Retur">Tur/Retur</option>
+                    </select>
+                </div>
+                <div class="col-6">
+                    <input type="text" id="startdato" class="form-control" size="10" onchange="datepickerSlutt()" placeholder="Fra dato" />
+                    <div id="errorStartDato" class="form-text" style="visibility: hidden; color: red">Du må velge en fra dato!</div>
+                </div>
+                <div class="col-6">
+                    <input type="text" id="sluttdato" class="form-control" size="10" placeholder="Til dato" style="visibility: hidden;"/>
+                    <div id="errorSluttDato" class="form-text" style="visibility: hidden; color: red">Du må velge en til dato!</div>
+                </div>
+                <div class="col-6">
+                    <label for="antallVoksne" class="form-label">Antall voksne:</label>
+                    <select id="antallVoksne" class="form-select" onchange="hentPris()">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                    </select>
+                    <div id="errorAntallVoksne" class="form-text" style="visibility: hidden; color: red">Du må velge minst én voksen!</div>
+                </div>
+                <div class="col-6">
+                    <label for="antallBarn" class="form-label">Antall barn (under 16):</label>
+                    <select id="antallBarn" class="form-select" onchange="hentPris()">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-6 row">
+                <div class="mb-3">
+                    <h4>Hvem reiser?</h4>
+                </div>
+                <div class="col-12">
+                    <label for="fornavn" class="form-label">Fornavn:</label>
+                    <input id="fornavn" type="text" class="form-control" placeholder="Fornavn" pattern="\b([A-ZÀ-ÿ][-a-z ]+[ ]*)+" title="Fornavn starter med stor bokstav. Gyldige tegn: - og mellomrom" />
+                    <div id="errorFornavn" class="form-text" style="visibility: hidden; color: red">Du må skrive inn ditt fornavn!</div>
+                </div>
+                <div class="col-12">
+                    <label for="etternavn" class="form-label">Etternavn:</label>
+                    <input id="etternavn" type="text" class="form-control" placeholder="Etternavn" pattern="\b([A-ZÀ-ÿ][-a-z ]+[ ]*)+" title="Etternavn starter med stor bokstav. Gyldige tegn: - og mellomrom" />
+                    <div id="errorEtternavn" class="form-text" style="visibility: hidden; color: red">Du må skrive inn ditt etternavn!</div>
+                </div>
+                <div class="col-12">
+                    <label for="email" class="form-label">Email:</label>
+                    <input id="email" type="text" class="form-control" placeholder="Email" pattern="([\w\.\-]+)@([\w\-]+).(\w{2,3})" title="Email må inneholde '@' og '.' f.eks. 'eksempel@email.no'" />
+                    <div id="errorEmail" class="form-text" style="visibility: hidden; color: red">Du må skrive inn din email!</div>
+                </div>
+            </div>
+            <div class="col-12 price-container">
+                <input type="submit" value="Bestill" class="btn btn-primary">
+                <p>Pris: </p>
+                <p id="pris"></p>
+            </div>
         </form>
     </div>
 </body>
