@@ -7,13 +7,38 @@
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-    <link type="text/css" rel="stylesheet" href="css/style.css" />
-    <link type="text/css" rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css" />
-    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="/css/style.css" />
+    <link type="text/css" rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css" />
+    <script src="/lib/bootstrap/js/bootstrap.min.js"></script>
     <script src="/js/index.js"></script>
 </head>
 <body>
-    <div id="dynHTML"></div>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand bg-light" href="#">
+                <img src="/images/Color_Line_color_horizontal.svg" alt="" width="100" height="50">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active text-light" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="#">Link</a>
+                    </li>
+                    <ul id="strekningene" class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    </ul>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-info" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
     <div class="container">
         dette er home page
         <a href="Pages/home.html">HomePage</a>
