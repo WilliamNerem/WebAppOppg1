@@ -39,7 +39,6 @@ namespace EF_2.Models
               
                 
 
-                // legg hele kunden med alle dataene inn i databasen
                 context.Strekning.Add(nyStrekning1);
                 context.Strekning.Add(nyStrekning2);
                 context.Strekning.Add(nyStrekning3);
