@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title></title>
+    <title>Betaling</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -10,6 +10,7 @@
     <link type="text/css" rel="stylesheet" href="/css/style.css" />
     <link type="text/css" rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css" />
     <script src="/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/js/betaling.js"></script>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light">
@@ -28,8 +29,6 @@
                     <li class="nav-item">
                         <a class="nav-link text-light" href="#">Link</a>
                     </li>
-                    <ul id="strekningene" class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    </ul>
                 </ul>
                 <form class="d-flex">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -39,7 +38,12 @@
         </div>
     </nav>
     <div class="container">
-        <p>Dette er betalingssiden</p>
+        <form autocomplete="off" action="Pages/betaling.html" onsubmit="return validerForm()">
+            <div id="betalingForm"></div>
+            <label>Informasjon om den som bestiller lol idk jeg kanke norsk</label>
+            <br />
+            <input type="submit" value="Bestill">
+        </form>
     </div>
 </body>
 </html>
