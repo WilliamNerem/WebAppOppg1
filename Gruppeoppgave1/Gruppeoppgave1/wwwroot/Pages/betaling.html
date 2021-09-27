@@ -11,6 +11,7 @@
     <link type="text/css" rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css" />
     <script src="/lib/bootstrap/js/bootstrap.min.js"></script>
     <script src="/js/betaling.js"></script>
+    <script src="/js/validering.js"></script>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light">
@@ -38,10 +39,8 @@
         </div>
     </nav>
     <div class="container">
-        <form autocomplete="off" action="Pages/betaling.html" onsubmit="return validerForm()">
+        <form autocomplete="off" action="Pages/betaling.html" onsubmit="return validerBetalingForm()">
             <div id="betalingForm"></div>
-            <label>Informasjon om den som bestiller lol idk jeg kanke norsk</label>
-            <br />
             <input type="submit" value="Bestill">
         </form>
     </div>

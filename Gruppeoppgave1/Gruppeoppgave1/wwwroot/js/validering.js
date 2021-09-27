@@ -1,4 +1,7 @@
 ﻿let error = false;
+const regexFornavn = /\b([A-ZÀ-ÿ][-a-z ]+[ ]*)+/;
+const regexEtternavn = /\b([A-ZÀ-ÿ][-a-z ]+[ ]*)+/;
+const regexEmail = /([\w\.\-]+)@([\w\-]+).(\w{2,3})/;
 
 function validerForm() {
     const valgtStrekning = $('#strekningene').val();
@@ -9,20 +12,64 @@ function validerForm() {
     const skrevetEtternavn = $('#etternavn').val();
     const skrevetEmail = $('#email').val();
 
+    sjekkRegex(skrevetFornavn, regexFornavn, '#errorFornavn', "Fornavn må starte med stor bokstav. Gyldige tegn: - og mellomrom");
+    sjekkRegex(skrevetEtternavn, regexEtternavn, '#errorEtternavn', "Etternavn må starte med stor bokstav. Gyldige tegn: - og mellomrom");
+    sjekkRegex(skrevetEmail, regexEmail, '#errorEmail', "Email må inneholde '@' og '.' f.eks. 'eksempel@email.no'");
+
     ifValidering(valgtStrekning, null, '#errorStrekning');
     ifValidering(valgtStartDato, "", '#errorStartDato');
     ifValidering(valgtSluttDato, "", '#errorSluttDato');
     ifValidering(valgtAntallVoksne, 0, '#errorAntallVoksne');
-    ifValidering(skrevetFornavn, "", '#errorFornavn');
-    ifValidering(skrevetEtternavn, "", '#errorEtternavn');
-    ifValidering(skrevetEmail, "", '#errorEmail');
+    formValidering(skrevetFornavn, "", '#errorFornavn', "Du må skrive inn fornavn!");
+    formValidering(skrevetEtternavn, "", '#errorEtternavn', "Du må skrive inn etternavn!");
+    formValidering(skrevetEmail, "", '#errorEmail', "Du må skrive inn email!");
+
+    console.log(error);
 
     if (error) {
+        error = false;
         return false;
     }
 
     saveValues();
 
+}
+
+function validerBetalingForm() {
+
+
+    for (let i = 1; i < localStorage.getItem("antallVoksne"); i++) {
+        const skrevetFornavn = $('#fornavn' + (i + 1)).val();
+        const skrevetEtternavn = $('#etternavn' + (i + 1)).val();
+        const skrevetEmail = $('#email' + (i + 1)).val();
+
+        sjekkRegex(skrevetFornavn, regexFornavn, '#errorFornavn' + (i + 1), "Fornavn må starte med stor bokstav. Gyldige tegn: - og mellomrom");
+        sjekkRegex(skrevetEtternavn, regexEtternavn, '#errorEtternavn' + (i + 1), "Etternavn må starte med stor bokstav. Gyldige tegn: - og mellomrom");
+        sjekkRegex(skrevetEmail, regexEmail, '#errorEmail' + (i + 1), "Email må inneholde '@' og '.' f.eks. 'eksempel@email.no'");
+
+        formValidering(skrevetFornavn, "", '#errorFornavn' + (i + 1), "Du må skrive inn fornavn!");
+        formValidering(skrevetEtternavn, "", '#errorEtternavn' + (i + 1), "Du må skrive inn etternavn!");
+        formValidering(skrevetEmail, "", '#errorEmail' + (i + 1), "Du må skrive inn email!");
+    }
+
+    for (let i = 0; i < localStorage.getItem("antallBarn"); i++) {
+        const skrevetFornavn = $('#fornavnBarn' + (i + 1)).val();
+        const skrevetEtternavn = $('#etternavnBarn' + (i + 1)).val();
+        const skrevetEmail = $('#emailBarn' + (i + 1)).val();
+
+        sjekkRegex(skrevetFornavn, regexFornavn, '#errorFornavnBarn' + (i + 1), "Fornavn må starte med stor bokstav. Gyldige tegn: - og mellomrom");
+        sjekkRegex(skrevetEtternavn, regexEtternavn, '#errorEtternavnBarn' + (i + 1), "Etternavn må starte med stor bokstav. Gyldige tegn: - og mellomrom");
+        sjekkRegex(skrevetEmail, regexEmail, '#errorEmailBarn' + (i + 1), "Email må inneholde '@' og '.' f.eks. 'eksempel@email.no'");
+
+        formValidering(skrevetFornavn, "", '#errorFornavnBarn' + (i + 1), "Du må skrive inn fornavn!");
+        formValidering(skrevetEtternavn, "", '#errorEtternavnBarn' + (i + 1), "Du må skrive inn etternavn!");
+        formValidering(skrevetEmail, "", '#errorEmailBarn' + (i + 1), "Du må skrive inn email!");
+    }
+
+    if (error) {
+        error = false;
+        return false;
+    }
 }
 
 function saveValues() {
@@ -33,12 +80,33 @@ function saveValues() {
     localStorage.setItem("email", $('#email').val());
 }
 
+function sjekkRegex(variabel, regex, id, errorMsg) {
+    if (variabel != "") {
+        const regexOK = regex.test(variabel);
+        if (!regexOK) {
+            $(id).html(errorMsg);
+            $(id).css({ visibility: "visible" });
+            error = true;
+        } else {
+            $(id).css({ visibility: "hidden" });
+        }
+    }
+}
+
 function ifValidering(variabel, sjekk, id) {
     if (variabel == sjekk) {
         $(id).css({ visibility: "visible" });
         error=true;
     } else {
         $(id).css({ visibility: "hidden" });
+    }
+}
+
+function formValidering(variabel, sjekk, id, errorMsg) {
+    if (variabel == sjekk) {
+        $(id).html(errorMsg);
+        $(id).css({ visibility: "visible" });
+        error = true;
     }
 }
 
