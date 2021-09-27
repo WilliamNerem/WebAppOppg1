@@ -94,7 +94,7 @@
             <input id="etternavn" type="text" placeholder="Etternavn" pattern="\b([A-ZÀ-ÿ][-a-z ]+[ ]*)+" title="Etternavn starter med stor bokstav. Gyldige tegn: - og mellomrom" />
                 <p id="errorEtternavn" style="visibility: hidden; color: red">Du må skrive inn ditt etternavn!</p>
             <label>Email:</label>
-            <input id="email" type="text" placeholder="Email" pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$" title="Emaisdljsadj"/>
+            <input id="email" type="text" placeholder="Email" pattern='@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$"' title="Email må inneholde '@' og '.' f.eks. 'eksempel@email.no'"/>
             <p id="errorEmail" style="visibility: hidden; color: red">Du må skrive inn din email!</p>
             <input type="submit" value="Bestill">
         </form>
