@@ -1,3 +1,5 @@
+let error = false;
+
 $(function () {
     hentAlleStrekninger();
     datepicker();
@@ -36,7 +38,6 @@ function hentPris() {
 }
 
 function validerForm() {
-    let error = false;
     const valgtStrekning = $('#strekningene').val();
     const valgtStartDato = $("#startdato").datepicker({ dateFormat: "dd-mm-yy" }).val();
     const valgtSluttDato = $("#sluttdato").datepicker({ dateFormat: "dd-mm-yy" }).val();
@@ -45,16 +46,13 @@ function validerForm() {
     const skrevetEtternavn = $('#etternavn').val();
     const skrevetEmail = $('#email').val();
 
-    error = ifValidering(valgtStrekning, null, '#errorStrekning');
-    error = ifValidering(valgtStartDato, "", '#errorStartDato');
-    error = ifValidering(valgtSluttDato, "", '#errorSluttDato');
-    error = ifValidering(valgtAntallVoksne, 0, '#errorAntallVoksne');
-    error = ifValidering(skrevetFornavn, "", '#errorFornavn');
-    error = ifValidering(skrevetEtternavn, "", '#errorEtternavn');
-    error = ifValidering(skrevetEmail, "", '#errorEmail');
-
-
-    console.log(skrevetEmail);
+    ifValidering(valgtStrekning, null, '#errorStrekning');
+    ifValidering(valgtStartDato, "", '#errorStartDato');
+    ifValidering(valgtSluttDato, "", '#errorSluttDato');
+    ifValidering(valgtAntallVoksne, 0, '#errorAntallVoksne');
+    ifValidering(skrevetFornavn, "", '#errorFornavn');
+    ifValidering(skrevetEtternavn, "", '#errorEtternavn');
+    ifValidering(skrevetEmail, "", '#errorEmail');
 
     if (error) {
         return false;
@@ -65,7 +63,7 @@ function validerForm() {
 function ifValidering(variabel, sjekk, id) {
     if (variabel == sjekk) {
         $(id).css({ visibility: "visible" });
-        return true;
+        error = true;
     } else {
         $(id).css({ visibility: "hidden" });
     }
