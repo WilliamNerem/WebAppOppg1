@@ -44,18 +44,21 @@
                     <label for="strekningene" class="form-label">Velg strekning:</label>
                     <select id="strekningene" class="form-select" onchange="hentPris()"></select>
                     <div id="errorStrekning" class="form-text" style="visibility: hidden; color: red">Du må velge en strekning!</div>
-                    <label>Velg enkel eller tur/retur:</label>
+
+                </div>
+                <label>
+                    Velg enkel eller tur/retur:
                     <select id="turvalg" onchange="datepickerSlutt()">
                         <option value="Enkel">Enkel</option>
                         <option value="Tur/Retur">Tur/Retur</option>
                     </select>
-                </div>
+                </label>
                 <div class="col-6">
                     <input type="text" id="startdato" class="form-control" size="10" onchange="datepickerSlutt()" placeholder="Fra dato" />
                     <div id="errorStartDato" class="form-text" style="visibility: hidden; color: red">Du må velge en fra dato!</div>
                 </div>
                 <div class="col-6">
-                    <input type="text" id="sluttdato" class="form-control" size="10" placeholder="Til dato" style="visibility: hidden;"/>
+                    <input type="text" id="sluttdato" class="form-control" size="10" placeholder="Til dato" style="visibility: hidden;" />
                     <div id="errorSluttDato" class="form-text" style="visibility: hidden; color: red">Du må velge en til dato!</div>
                 </div>
                 <div class="col-6">
