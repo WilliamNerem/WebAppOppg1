@@ -31,10 +31,22 @@
             </div>
         </div>
     </nav>
+    <img src="/images/color-line-bg.png" alt="Bilde av Color Line som seiler" class="img-bg-top" />
     <div class="container">
-        <form autocomplete="off" action="Pages/betaling.html" onsubmit="return validerBetalingForm()">
-            <div id="betalingForm"></div>
-            <input type="submit" value="Bestill">
+        <form class="row g-2 form-container" action="#" onsubmit="#">
+            <label for="kortNr">
+                Kortnummer
+                <input id="kortNr" name="kortNr" type="tel" inputmode="numeric" pattern="[0-9\s]{13,19}" autocomplete="cc-number" maxlength="19" placeholder="XXXX XXXX XXXX XXXX" />
+            </label>
+            <label for="utløpsdato">
+                Utløpsdato
+                <input id="utløpsdato" name="utløpsdato" type="tel" autocomplete="cc-exp" pattern="(?:0[1-9]|1[0-2])/([0-9]{2}|[0-9]{4})" placeholder="MM/ÅÅ" title="Vennligst fyll ut utløpsdato i formatet MM/ÅÅ"/>
+            </label>
+            <label for="cvc">
+                CVC
+                <input id="cvc" name="cvc" type="tel" inputmode="numeric" autocomplete="cc-csc" pattern="[0-9]*" placeholder="CVC" />
+            </label>
+            <input type="submit" value="Fullfør betaling" />
         </form>
     </div>
 </body>
