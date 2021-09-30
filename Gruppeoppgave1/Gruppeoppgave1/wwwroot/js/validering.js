@@ -126,7 +126,7 @@ function datepickerSlutt() {
         datoParts[1] = datoParts[1] - 1;
 
         let dato = new Date(datoParts[2], datoParts[1], datoParts[0]);
-        let maksdato = new Date();
+        let maksdato = new Date(dato);
         maksdato.setDate(dato.getDate() + 10);
 
         $('#sluttdato').datepicker("destroy");
