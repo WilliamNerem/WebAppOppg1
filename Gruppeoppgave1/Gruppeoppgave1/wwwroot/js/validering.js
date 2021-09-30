@@ -2,6 +2,7 @@ let error = false;
 const regexFornavn = /\b([A-ZÀ-ÿ][-a-z ]+[ ]*)+/;
 const regexEtternavn = /\b([A-ZÀ-ÿ][-a-z ]+[ ]*)+/;
 const regexEmail = /([\w\.\-]+)@([\w\-]+).(\w{2,3})/;
+const regexFodselsdato = /(((0[1-9]|[12][0-9]|3[01])-(0[13578]|10|12)-(\b([1][9][0-9][0-9]|[2][0][0-1][0-9]|[2][0][2][0])\b))|(([0][1-9]|[12][0-9]|30)-(0[469]|11)-(\b([1][9][0-9][0-9]|[2][0][0-1][0-9]|[2][0][2][0])\b))|((0[1-9]|1[0-9]|2[0-8])-(02)-(\b([1][9][0-9][0-9]|[2][0][0-1][0-9]|[2][0][2][0])\b))|((29)(\/)(02)-([02468][048]00))|((29)-(02)-([13579][26]00))|((29)-(02)-([0-9][0-9][0][48]))|((29)-(02)-([0-9][0-9][2468][048]))|((29)-(02)-([0-9][0-9][13579][26])))/;
 
 function validerForm() {
     const valgtStrekning = $('#strekningene').val();
@@ -40,26 +41,31 @@ function validerBetalingForm() {
         const skrevetFornavn = $('#fornavn' + (i + 1)).val();
         const skrevetEtternavn = $('#etternavn' + (i + 1)).val();
         const skrevetEmail = $('#email' + (i + 1)).val();
+        const skrevetFodselsdato = $('#fodselsdato' + (i + 1)).val();
 
         sjekkRegex(skrevetFornavn, regexFornavn, '#errorFornavn' + (i + 1), "Fornavn må starte med stor bokstav. Gyldige tegn: - og mellomrom");
         sjekkRegex(skrevetEtternavn, regexEtternavn, '#errorEtternavn' + (i + 1), "Etternavn må starte med stor bokstav. Gyldige tegn: - og mellomrom");
         sjekkRegex(skrevetEmail, regexEmail, '#errorEmail' + (i + 1), "Email må inneholde '@' og '.' f.eks. 'eksempel@email.no'");
+        sjekkRegex(skrevetFodselsdato, regexFodselsdato, '#errorFodselsdato' + (i + 1), "Fødselsdato må være på formatet: 'DD-MM-ÅÅÅÅ'");
 
         formValidering(skrevetFornavn, "", '#errorFornavn' + (i + 1), "Du må skrive inn fornavn!");
         formValidering(skrevetEtternavn, "", '#errorEtternavn' + (i + 1), "Du må skrive inn etternavn!");
         formValidering(skrevetEmail, "", '#errorEmail' + (i + 1), "Du må skrive inn email!");
+        formValidering(skrevetFodselsdato, "", '#errorFodselsdato' + (i + 1), "Du må skrive inn fødselsdato!");
     }
 
     for (let i = 0; i < sessionStorage.getItem("antallBarn"); i++) {
         const skrevetFornavn = $('#fornavnBarn' + (i + 1)).val();
         const skrevetEtternavn = $('#etternavnBarn' + (i + 1)).val();
-        const skrevetEmail = $('#emailBarn' + (i + 1)).val();
+        const skrevetFodselsdato = $('#fodselsdatoBarn' + (i + 1)).val();
 
         sjekkRegex(skrevetFornavn, regexFornavn, '#errorFornavnBarn' + (i + 1), "Fornavn må starte med stor bokstav. Gyldige tegn: - og mellomrom");
         sjekkRegex(skrevetEtternavn, regexEtternavn, '#errorEtternavnBarn' + (i + 1), "Etternavn må starte med stor bokstav. Gyldige tegn: - og mellomrom");
+        sjekkRegex(skrevetFodselsdato, regexFodselsdato, '#errorFodselsdatoBarn' + (i + 1), "Fødselsdato må være gyldig og på formatet: 'DD-MM-ÅÅÅÅ'");
 
         formValidering(skrevetFornavn, "", '#errorFornavnBarn' + (i + 1), "Du må skrive inn fornavn!");
         formValidering(skrevetEtternavn, "", '#errorEtternavnBarn' + (i + 1), "Du må skrive inn etternavn!");
+        formValidering(skrevetFodselsdato, "", '#errorFodselsdatoBarn' + (i + 1), "Du må skrive inn fødselsdato!");
     }
 
     if (error) {
