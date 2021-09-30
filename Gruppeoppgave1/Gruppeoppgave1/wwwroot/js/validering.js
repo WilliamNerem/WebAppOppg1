@@ -1,4 +1,4 @@
-﻿let error = false;
+let error = false;
 const regexFornavn = /\b([A-ZÀ-ÿ][-a-z ]+[ ]*)+/;
 const regexEtternavn = /\b([A-ZÀ-ÿ][-a-z ]+[ ]*)+/;
 const regexEmail = /([\w\.\-]+)@([\w\-]+).(\w{2,3})/;
@@ -24,8 +24,6 @@ function validerForm() {
     formValidering(skrevetEtternavn, "", '#errorEtternavn', "Du må skrive inn etternavn!");
     formValidering(skrevetEmail, "", '#errorEmail', "Du må skrive inn email!");
 
-    console.log(error);
-
     if (error) {
         error = false;
         return false;
@@ -38,7 +36,7 @@ function validerForm() {
 function validerBetalingForm() {
 
 
-    for (let i = 1; i < localStorage.getItem("antallVoksne"); i++) {
+    for (let i = 1; i < sessionStorage.getItem("antallVoksne"); i++) {
         const skrevetFornavn = $('#fornavn' + (i + 1)).val();
         const skrevetEtternavn = $('#etternavn' + (i + 1)).val();
         const skrevetEmail = $('#email' + (i + 1)).val();
@@ -52,7 +50,7 @@ function validerBetalingForm() {
         formValidering(skrevetEmail, "", '#errorEmail' + (i + 1), "Du må skrive inn email!");
     }
 
-    for (let i = 0; i < localStorage.getItem("antallBarn"); i++) {
+    for (let i = 0; i < sessionStorage.getItem("antallBarn"); i++) {
         const skrevetFornavn = $('#fornavnBarn' + (i + 1)).val();
         const skrevetEtternavn = $('#etternavnBarn' + (i + 1)).val();
         const skrevetEmail = $('#emailBarn' + (i + 1)).val();
@@ -73,11 +71,11 @@ function validerBetalingForm() {
 }
 
 function saveValues() {
-    localStorage.setItem("antallVoksne", $('#antallVoksne').val());
-    localStorage.setItem("antallBarn", $('#antallBarn').val());
-    localStorage.setItem("fornavn", $('#fornavn').val());
-    localStorage.setItem("etternavn", $('#etternavn').val());
-    localStorage.setItem("email", $('#email').val());
+    sessionStorage.setItem("antallVoksne", $('#antallVoksne').val());
+    sessionStorage.setItem("antallBarn", $('#antallBarn').val());
+    sessionStorage.setItem("fornavn", $('#fornavn').val());
+    sessionStorage.setItem("etternavn", $('#etternavn').val());
+    sessionStorage.setItem("email", $('#email').val());
 }
 
 function sjekkRegex(variabel, regex, id, errorMsg) {

@@ -2,11 +2,20 @@
 let antallBarn;
 
 $(function () {
-    antallVoksne = localStorage.getItem("antallVoksne");
-    antallBarn = localStorage.getItem("antallBarn");
-    fornavn = localStorage.getItem("fornavn");
-    etternavn = localStorage.getItem("etternavn");
-    email = localStorage.getItem("email");
+
+    antallVoksne = sessionStorage.getItem("antallVoksne");
+    antallBarn = sessionStorage.getItem("antallBarn");
+    fornavn = sessionStorage.getItem("fornavn");
+    etternavn = sessionStorage.getItem("etternavn");
+    email = sessionStorage.getItem("email");
+
+    if (
+        fornavn == null ||
+        etternavn == null ||
+        email == null
+    ) {
+        this.location.href = '../index.html';
+    }
     renderForm();
 });
 
