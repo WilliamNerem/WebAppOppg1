@@ -57,11 +57,9 @@ function validerBetalingForm() {
 
         sjekkRegex(skrevetFornavn, regexFornavn, '#errorFornavnBarn' + (i + 1), "Fornavn må starte med stor bokstav. Gyldige tegn: - og mellomrom");
         sjekkRegex(skrevetEtternavn, regexEtternavn, '#errorEtternavnBarn' + (i + 1), "Etternavn må starte med stor bokstav. Gyldige tegn: - og mellomrom");
-        sjekkRegex(skrevetEmail, regexEmail, '#errorEmailBarn' + (i + 1), "Email må inneholde '@' og '.' f.eks. 'eksempel@email.no'");
 
         formValidering(skrevetFornavn, "", '#errorFornavnBarn' + (i + 1), "Du må skrive inn fornavn!");
         formValidering(skrevetEtternavn, "", '#errorEtternavnBarn' + (i + 1), "Du må skrive inn etternavn!");
-        formValidering(skrevetEmail, "", '#errorEmailBarn' + (i + 1), "Du må skrive inn email!");
     }
 
     if (error) {
