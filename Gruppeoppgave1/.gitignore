@@ -1,4 +1,3 @@
-/Gruppeoppgave1/Gruppeoppgave1/Logs/
 /build/
 *.suo
 *.user
@@ -12,6 +11,7 @@ Release/
 *.opensdf
 *.tlog
 *.log
+*.txt
 TestResult.xml
 *.VisualState.xml
 Version.cs
