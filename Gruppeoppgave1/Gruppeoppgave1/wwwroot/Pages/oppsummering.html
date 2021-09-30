@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Oppsummering</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link type="text/css" rel="stylesheet" href="/css/style.css" />
+    <link type="text/css" rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css" />
+    <script src="/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/js/index.js"></script>
+    <script src="js/validering.js"></script>
+</head>
+<body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand bg-light" href="/index.html">
+                <img src="/images/Color_Line_color_horizontal.svg" alt="" width="100" height="50">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active text-light" aria-current="page" href="/index.html">Hjem</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <img src="/images/color-line-bg.png" alt="Bilde av Color Line som seiler" class="img-bg-top" />
+    <div class="container">
+        <form class="row g-2 form-container" autocomplete="off" action="/index.html">
+            <h2 class="text-center">Bestilling gjennomført! Bekreftelse vil bli sendt til DIN EPOST HER</h2>
+            <hr class="mb-3 divider" />
+            <div class="col-6 row">
+                <div class="mb-3">
+                    <h4>Reiseinformasjon</h4>
+                </div>
+                <div class="col-12">
+                    <label for="strekningene" class="form-label">Velg strekning:</label>
+                    <label>Velg enkel eller tur/retur:</label>
+                </div>
+                <div class="col-6">
+                    <input type="text" id="startdato" class="form-control" size="10" onchange="datepickerSlutt()" placeholder="Fra dato" />
+                </div>
+                <div class="col-6">
+                    <input type="text" id="sluttdato" class="form-control" size="10" placeholder="Til dato" style="visibility: hidden;" />
+                </div>
+                <div class="col-6">
+                    <label for="antallVoksne" class="form-label">Antall voksne:</label>
+                </div>
+                <div class="col-6">
+                    <label for="antallBarn" class="form-label">Antall barn (under 16):</label>
+                </div>
+            </div>
+            <div class="col-6 row">
+                <div class="mb-3">
+                    <h4>Referansenummer: 192018</h4>
+                </div>
+                <div class="col-12">
+                    <label for="fornavn" class="form-label">Fornavn:</label>
+                    <input id="fornavn" type="text" class="form-control" placeholder="Fornavn" />
+                </div>
+                <div class="col-12">
+                    <label for="etternavn" class="form-label">Etternavn:</label>
+                    <input id="etternavn" type="text" class="form-control" placeholder="Etternavn" />
+                </div>
+                <div class="col-12">
+                    <label for="email" class="form-label">Email:</label>
+                    <input id="email" type="text" class="form-control" placeholder="Email" />
+                </div>
+            </div>
+            <div class="col-12 price-container">
+                <input type="submit" value="Returner til forside" class="btn btn-primary">
+                <p>Pris: </p>
+                <p id="pris"></p>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

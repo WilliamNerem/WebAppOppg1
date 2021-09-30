@@ -45,4 +45,5 @@ hr.divider {
     margin: auto;
     max-width: none;
     position: relative;
+    display: flex;
 }

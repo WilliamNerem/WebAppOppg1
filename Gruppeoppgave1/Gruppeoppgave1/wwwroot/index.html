@@ -25,22 +25,15 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active text-light" aria-current="page" href="/Pages/home.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-light" href="#">Link</a>
+                        <a class="nav-link active text-light" aria-current="page" href="/index.html">Hjem</a>
                     </li>
                 </ul>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-info" type="submit">Search</button>
-                </form>
             </div>
         </div>
     </nav>
-    <img src="images/color-line-bg.png" alt="Bilde av Color Line som seiler" class="img-bg-top"/>
+    <img src="/images/color-line-bg.png" alt="Bilde av Color Line som seiler" class="img-bg-top"/>
     <div class="container">
-        <form class="row g-2 form-container" autocomplete="off" action="Pages/betaling.html" onsubmit="return validerForm()">
+        <form class="row g-2 form-container" autocomplete="off" action="Pages/reisendeInformasjon.html" onsubmit="return validerForm()">
         <h2 class="text-center">Bestilling av reise:</h2>
             <hr class="mb-3 divider" />
             <div class="col-6 row">
@@ -51,18 +44,21 @@
                     <label for="strekningene" class="form-label">Velg strekning:</label>
                     <select id="strekningene" class="form-select" onchange="hentPris()"></select>
                     <div id="errorStrekning" class="form-text" style="visibility: hidden; color: red">Du må velge en strekning!</div>
-                    <label>Velg enkel eller tur/retur:</label>
+
+                </div>
+                <label>
+                    Velg enkel eller tur/retur:
                     <select id="turvalg" onchange="datepickerSlutt()">
                         <option value="Enkel">Enkel</option>
                         <option value="Tur/Retur">Tur/Retur</option>
                     </select>
-                </div>
+                </label>
                 <div class="col-6">
                     <input type="text" id="startdato" class="form-control" size="10" onchange="datepickerSlutt()" placeholder="Fra dato" />
                     <div id="errorStartDato" class="form-text" style="visibility: hidden; color: red">Du må velge en fra dato!</div>
                 </div>
                 <div class="col-6">
-                    <input type="text" id="sluttdato" class="form-control" size="10" placeholder="Til dato" style="visibility: hidden;"/>
+                    <input type="text" id="sluttdato" class="form-control" size="10" placeholder="Til dato" style="visibility: hidden;" />
                     <div id="errorSluttDato" class="form-text" style="visibility: hidden; color: red">Du må velge en til dato!</div>
                 </div>
                 <div class="col-6">
