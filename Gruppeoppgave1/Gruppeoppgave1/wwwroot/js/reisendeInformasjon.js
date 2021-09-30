@@ -40,7 +40,10 @@ function renderForm() {
             "<p id='errorEtternavn" + (i + 1) + "' style='visibility: hidden; color: red'>Du må skrive inn etternavn!</p>" +
             "<label>Email:</label>" +
             "<input id='email" + (i + 1) + "' type='text' placeholder='Email' />" +
-            "<p id='errorEmail" + (i + 1) + "' style='visibility: hidden; color: red'>Du må skrive inn email!</p>";
+            "<p id='errorEmail" + (i + 1) + "' style='visibility: hidden; color: red'>Du må skrive inn email!</p>" +
+            "<label>FødselsDato:</label>" +
+            "<input id='fodselsdato" + (i + 1) + "' type='text' placeholder='DD-MM-ÅÅÅÅ' />" +
+            "<p id='errorFodselsdato" + (i + 1) + "' style='visibility: hidden; color: red'>Du må skrive inn fødselsdato!</p>";
     }
     if (antallBarn > 0) {
         ut += "<h3>Skriv inn informasjon om barn:</h3><br/>";
@@ -51,7 +54,10 @@ function renderForm() {
                 "<p id='errorFornavnBarn" + (i + 1) + "' style='visibility: hidden; color: red'>Du må skrive inn fornavn!</p>" +
                 "<label>Etternavn:</label>" +
                 "<input id='etternavnBarn" + (i + 1) + "' type='text' placeholder='Etternavn' />" +
-                "<p id='errorEtternavnBarn" + (i + 1) + "' style='visibility: hidden; color: red'>Du må skrive inn etternavn!</p>";
+                "<p id='errorEtternavnBarn" + (i + 1) + "' style='visibility: hidden; color: red'>Du må skrive inn etternavn!</p>" +
+                "<label>FødselsDato:</label>" +
+                "<input id='fodselsdatoBarn" + (i + 1) + "' type='text' placeholder='DD-MM-ÅÅÅÅ' />" +
+                "<p id='errorFodselsdatoBarn" + (i + 1) + "' style='visibility: hidden; color: red'>Du må skrive inn fødselsdato!</p>";
         }
     }
 
