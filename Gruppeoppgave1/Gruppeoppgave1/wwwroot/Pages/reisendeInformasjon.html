@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title></title>
+    <title>Betaling</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -10,11 +10,13 @@
     <link type="text/css" rel="stylesheet" href="/css/style.css" />
     <link type="text/css" rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css" />
     <script src="/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/js/reisendeInformasjon.js"></script>
+    <script src="/js/validering.js"></script>
 </head>
-<body>
+<body class="bg-light">
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
-            <a class="navbar-brand bg-light" href="#">
+            <a class="navbar-brand bg-light" href="/index.html">
                 <img src="/images/Color_Line_color_horizontal.svg" alt="" width="100" height="50">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -23,7 +25,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active text-light" aria-current="page" href="/Pages/home.html">Home</a>
+                        <a class="nav-link active text-light" aria-current="page" href="/index.html">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-light" href="#">Link</a>
@@ -36,5 +38,11 @@
             </div>
         </div>
     </nav>
+    <div class="container">
+        <form autocomplete="off" action="/Pages/betaling.html" onsubmit="return validerBetalingForm()">
+            <div id="betalingForm"></div>
+            <input type="submit" value="Gå videre til betaling">
+        </form>
+    </div>
 </body>
 </html>
