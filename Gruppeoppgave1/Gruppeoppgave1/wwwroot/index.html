@@ -46,7 +46,7 @@
                     <div id="errorStrekning" class="form-text" style="visibility: hidden; color: red">Du må velge en strekning!</div>
 
                 </div>
-                <label>
+                <label style="margin-bottom: 8px">
                     Velg enkel eller tur/retur:
                     <select id="turvalg" onchange="datepickerSlutt()">
                         <option value="Enkel">Enkel</option>
@@ -86,7 +86,11 @@
                         <option value="6">6</option>
                     </select>
                 </div>
-                <div style="height: 95px"></div>
+                <div style="height: 33px"></div>
+                <div class="col-12">
+                    <label id="pris" class="form-label">Pris:</label>
+                </div>
+                <div style="height: 30px"></div>
             </div>
             <div class="col-6 row">
                 <div class="mb-3">
@@ -115,8 +119,6 @@
             </div>
             <div class="col-12 price-container">
                 <input type="submit" value="Bestill" class="btn btn-primary">
-                <p>Pris: </p>
-                <p id="pris"></p>
             </div>
         </form>
     </div>
