@@ -41,7 +41,7 @@ function renderForm() {
             "<label>Email:</label>" +
             "<input id='email" + (i + 1) + "' type='text' placeholder='Email' />" +
             "<p id='errorEmail" + (i + 1) + "' style='visibility: hidden; color: red'>Du må skrive inn email!</p>" +
-            "<label>FødselsDato:</label>" +
+            "<label>Fødselsdato:</label>" +
             "<input id='fodselsdato" + (i + 1) + "' type='text' placeholder='DD-MM-ÅÅÅÅ' />" +
             "<p id='errorFodselsdato" + (i + 1) + "' style='visibility: hidden; color: red'>Du må skrive inn fødselsdato!</p>";
     }
@@ -55,7 +55,7 @@ function renderForm() {
                 "<label>Etternavn:</label>" +
                 "<input id='etternavnBarn" + (i + 1) + "' type='text' placeholder='Etternavn' />" +
                 "<p id='errorEtternavnBarn" + (i + 1) + "' style='visibility: hidden; color: red'>Du må skrive inn etternavn!</p>" +
-                "<label>FødselsDato:</label>" +
+                "<label>Fødselsdato:</label>" +
                 "<input id='fodselsdatoBarn" + (i + 1) + "' type='text' placeholder='DD-MM-ÅÅÅÅ' />" +
                 "<p id='errorFodselsdatoBarn" + (i + 1) + "' style='visibility: hidden; color: red'>Du må skrive inn fødselsdato!</p>";
         }
