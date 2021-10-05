@@ -31,10 +31,13 @@
             </div>
         </div>
     </nav>
-    <div class="container">
+    <div class="container" style="margin-top: 70px">
         <form autocomplete="off" action="/Pages/betaling.html" onsubmit="return validerInformasjonsForm()">
-            <div id="betalingForm"></div>
-            <input type="submit" value="Gå videre til betaling">
+            <h3>Skriv inn informasjon om voksne:</h3><br />
+            <div id="betalingForm" style="display: flex; flex-flow: wrap;"></div>
+            <div id="infoBarn" style="margin-top: 20px"></div>
+            <div id="betalingFormBarn" style="display: flex; flex-flow: wrap; margin-bottom: 20px"></div>
+            <input type="submit" class="btn btn-primary" value="Gå videre til betaling">
         </form>
     </div>
 </body>

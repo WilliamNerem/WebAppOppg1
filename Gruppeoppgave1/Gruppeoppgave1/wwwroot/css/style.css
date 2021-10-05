@@ -47,3 +47,13 @@ hr.divider {
     position: relative;
     display: flex;
 }
+
+.reisendeInformasjon-container {
+    flex: 0 0 auto;
+    width: 32.5%;
+    margin-bottom: 15px;
+}
+
+.flexBreak {
+    width: 100%;
+}
