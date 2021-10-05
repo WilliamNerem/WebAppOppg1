@@ -15,10 +15,12 @@ function validerForm() {
     const skrevetFornavn = $('#fornavn').val();
     const skrevetEtternavn = $('#etternavn').val();
     const skrevetEmail = $('#email').val();
+    const skrevetFodselsdato = $('#fodselsdato').val();
 
     sjekkRegex(skrevetFornavn, regexFornavn, '#errorFornavn', "Fornavn må starte med stor bokstav. Gyldige tegn: - og mellomrom");
     sjekkRegex(skrevetEtternavn, regexEtternavn, '#errorEtternavn', "Etternavn må starte med stor bokstav. Gyldige tegn: - og mellomrom");
     sjekkRegex(skrevetEmail, regexEmail, '#errorEmail', "Email må inneholde '@' og '.' f.eks. 'eksempel@email.no'");
+    sjekkRegex(skrevetFodselsdato, regexFodselsdato, '#errorFodselsdato', "Fødselsdato må være gyldig og på formatet: 'DD-MM-ÅÅÅÅ'");
 
     ifValidering(valgtStrekning, null, '#errorStrekning');
     ifValidering(valgtStartDato, "", '#errorStartDato');
@@ -29,6 +31,8 @@ function validerForm() {
     formValidering(skrevetFornavn, "", '#errorFornavn', "Du må skrive inn fornavn!");
     formValidering(skrevetEtternavn, "", '#errorEtternavn', "Du må skrive inn etternavn!");
     formValidering(skrevetEmail, "", '#errorEmail', "Du må skrive inn email!");
+    formValidering(skrevetFodselsdato, "", '#errorFodselsdato', "Du må skrive inn fødselsdato!");
+    
 
     if (error) {
         error = false;
@@ -51,7 +55,7 @@ function validerInformasjonsForm() {
         sjekkRegex(skrevetFornavn, regexFornavn, '#errorFornavn' + (i + 1), "Fornavn må starte med stor bokstav. Gyldige tegn: - og mellomrom");
         sjekkRegex(skrevetEtternavn, regexEtternavn, '#errorEtternavn' + (i + 1), "Etternavn må starte med stor bokstav. Gyldige tegn: - og mellomrom");
         sjekkRegex(skrevetEmail, regexEmail, '#errorEmail' + (i + 1), "Email må inneholde '@' og '.' f.eks. 'eksempel@email.no'");
-        sjekkRegex(skrevetFodselsdato, regexFodselsdato, '#errorFodselsdato' + (i + 1), "Fødselsdato må være på formatet: 'DD-MM-ÅÅÅÅ'");
+        sjekkRegex(skrevetFodselsdato, regexFodselsdato, '#errorFodselsdato' + (i + 1), "Fødselsdato må være gyldig og på formatet: 'DD-MM-ÅÅÅÅ'");
 
         formValidering(skrevetFornavn, "", '#errorFornavn' + (i + 1), "Du må skrive inn fornavn!");
         formValidering(skrevetEtternavn, "", '#errorEtternavn' + (i + 1), "Du må skrive inn etternavn!");
@@ -109,6 +113,7 @@ function saveValues() {
     sessionStorage.setItem("email", $('#email').val());
     sessionStorage.setItem("startdato", $('#startdato').val());
     sessionStorage.setItem("sluttdato", $('#sluttdato').val());
+    sessionStorage.setItem("fodselsdato", $('#fodselsdato').val());
 }
 
 function sjekkRegex(variabel, regex, id, errorMsg) {
