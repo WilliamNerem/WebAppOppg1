@@ -37,17 +37,17 @@
             <label for="kortNr">
                 Kortnummer
             </label>
-            <input id="kortNr" name="kortNr" type="tel" inputmode="numeric" maxlength="19" placeholder="XXXX XXXX XXXX XXXX" />
+            <input id="kortNr" name="kortNr" type="tel" inputmode="numeric" maxlength="19" placeholder="XXXX XXXX XXXX XXXX" autocomplete="cc-number"/>
             <div id="errorKortnummer" class="form-text" style="visibility: hidden; color: red">Du må skrive inn kortnummer!</div>
             <label for="utløpsdato">
                 Utløpsdato
             </label>
-            <input id="utlopsdato" name="utlopsdato" type="tel" placeholder="MM/ÅÅ" title="Vennligst fyll ut utløpsdato i formatet MM/ÅÅ" />
+            <input id="utlopsdato" name="utlopsdato" type="tel" placeholder="MM/ÅÅ" title="Vennligst fyll ut utløpsdato i formatet MM/ÅÅ" autocomplete="cc-exp" />
             <div id="errorUtlopsdato" class="form-text" style="visibility: hidden; color: red">Du må skrive inn utløpsdato!</div>
             <label for="cvc">
                 CVC
             </label>
-            <input id="cvc" name="cvc" type="tel" inputmode="numeric" placeholder="CVC" />
+            <input id="cvc" name="cvc" type="tel" inputmode="numeric" placeholder="CVC" autocomplete="cc-csc"/>
             <div id="errorCVC" class="form-text" style="visibility: hidden; color: red">Du må skrive inn CVC!</div>
             <input type="submit" value="Fullfør betaling" />
         </form>
