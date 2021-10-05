@@ -28,7 +28,7 @@ function renderForm() {
         "<label class='form-label'>Fornavn:</label>" +
         "<input id='fornavn' class='form-control' type='text' value='" + fornavn + "' readonly />" +
         "<div style='height: 46px'></div>" +
-        "<label class='form-label'>Epost:</label>" +
+        "<label class='form-label'>E-post:</label>" +
         "<input id='email' class='form-control' type='text' value='" + email + "' readonly/>" +
         "<div style='height: 46px'></div>" +
         "</div>" +
@@ -47,9 +47,9 @@ function renderForm() {
             "<label class='form-label'>Fornavn:</label>" +
             "<input id='fornavn" + (i + 1) + "' class='form-control' type='text' placeholder='Fornavn'/>" +
             "<div id='errorFornavn" + (i + 1) + "' class='form-text' style='visibility: hidden; color: red'>Du må skrive inn fornavn!</div>" +
-            "<label class='form-label'>Epost:</label>" +
-            "<input id='email" + (i + 1) + "' class='form-control' type='text' placeholder='Epost' />" +
-            "<div id='errorEmail" + (i + 1) + "' class='form-text' style='visibility: hidden; color: red'>Du må skrive inn epost!</div>" +
+            "<label class='form-label'>E-post:</label>" +
+            "<input id='email" + (i + 1) + "' class='form-control' type='text' placeholder='E-post' />" +
+            "<div id='errorEmail" + (i + 1) + "' class='form-text' style='visibility: hidden; color: red'>Du må skrive inn e-post!</div>" +
             "</div>" +
             "<div class='col-6 row'>" +
             "<label class='form-label'>Etternavn:</label>" +
