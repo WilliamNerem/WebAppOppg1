@@ -22,7 +22,9 @@ function validerForm() {
 
     ifValidering(valgtStrekning, null, '#errorStrekning');
     ifValidering(valgtStartDato, "", '#errorStartDato');
-    ifValidering(valgtSluttDato, "", '#errorSluttDato');
+    if ($("#turvalg option:selected").val() === "Tur/Retur") {
+        ifValidering(valgtSluttDato, "", '#errorSluttDato');
+    }
     ifValidering(valgtAntallVoksne, 0, '#errorAntallVoksne');
     formValidering(skrevetFornavn, "", '#errorFornavn', "Du må skrive inn fornavn!");
     formValidering(skrevetEtternavn, "", '#errorEtternavn', "Du må skrive inn etternavn!");
@@ -150,6 +152,8 @@ function datepicker() {
 function datepickerSlutt() {
     $("#sluttdato").css({ visibility: "hidden" });
     $("#labeltildato").css({ visibility: "hidden" });
+    $('#errorSluttDato').css({ visibility: "hidden" });
+    $('#sluttdato').val('');
     if ($("#turvalg option:selected").val() === "Tur/Retur") {
         $("#labeltildato").css({ visibility: "visible" });
         $("#sluttdato").css({ visibility: "visible" });
