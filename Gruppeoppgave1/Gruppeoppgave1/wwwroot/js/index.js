@@ -31,6 +31,8 @@ function hentPris() {
     const url = "Strekning/HentEn?id=" + value;
 
     $.get(url, function (strekning) {
-        $("#pris").html(strekning.pris * pris);
+        const totalpris = strekning.pris * pris;
+        sessionStorage.setItem("totalpris", totalpris);
+        $("#pris").html(totalpris);
     });
 }

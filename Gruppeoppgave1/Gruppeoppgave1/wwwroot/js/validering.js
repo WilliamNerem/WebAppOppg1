@@ -75,11 +75,14 @@ function validerBetalingForm() {
 }
 
 function saveValues() {
+    sessionStorage.setItem("strekning", $('#strekningene').val());
     sessionStorage.setItem("antallVoksne", $('#antallVoksne').val());
     sessionStorage.setItem("antallBarn", $('#antallBarn').val());
     sessionStorage.setItem("fornavn", $('#fornavn').val());
     sessionStorage.setItem("etternavn", $('#etternavn').val());
     sessionStorage.setItem("email", $('#email').val());
+    sessionStorage.setItem("startdato", $('#startdato').val());
+    sessionStorage.setItem("sluttdato", $('#sluttdato').val());
 }
 
 function sjekkRegex(variabel, regex, id, errorMsg) {
