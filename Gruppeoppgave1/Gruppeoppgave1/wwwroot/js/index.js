@@ -1,6 +1,7 @@
 $(function () {
     hentAlleStrekninger();
     datepicker();
+    inputDesignIndex();
 });
 
 function hentAlleStrekninger() {
@@ -17,6 +18,12 @@ function formaterStrekninger(strekninger) {
     }
 
     $("#strekningene").html(ut);
+}
+
+function inputDesignIndex() {
+    document.getElementById('fodselsdato').addEventListener('input', function (e) {
+        e.target.value = e.target.value.replace(/^(\d\d)(\d)$/g, '$1/$2').replace(/^(\d\d\/\d\d)(\d+)$/g, '$1/$2').replace(/[^\d\/]/g, '').trim();
+    });
 }
 
 function hentPris() {
