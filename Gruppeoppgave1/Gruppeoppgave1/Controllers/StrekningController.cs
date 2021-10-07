@@ -47,7 +47,7 @@ namespace Gruppeoppgave1.Controllers
                 _log.LogInformation("Fant ikke strekningen");
                 return NotFound("Fant ikke strekningen");
             }
-            _log.LogInformation("Hentet strekning " + enStrekning.Navn);
+            _log.LogInformation("Hentet strekning " + enStrekning.Navn); // For å vise at vi behersker logging, litt overflødig
             return Ok(enStrekning);
         }
     }
