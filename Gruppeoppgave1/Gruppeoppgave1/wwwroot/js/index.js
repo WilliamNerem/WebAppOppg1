@@ -33,12 +33,13 @@ function hentPris() {
     $.get(url, function (strekning) {
         const totalpris = strekning.pris * pris;
         const valgtStrekning = strekning.navn;
-        sessionStorage.setItem("totalpris", totalpris);
         sessionStorage.setItem("valgtStrekning", valgtStrekning);
         if ($("#turvalg option:selected").val() === "Tur/Retur") {
             $("#pris").html("Pris: " + totalpris * 2 + "kr");
+            sessionStorage.setItem("totalpris", totalpris * 2);
         } else {
             $("#pris").html("Pris: " + totalpris + "kr");
+            sessionStorage.setItem("totalpris", totalpris);
         }
     });
 }
