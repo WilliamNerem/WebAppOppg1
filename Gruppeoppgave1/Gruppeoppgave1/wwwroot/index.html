@@ -34,7 +34,7 @@
     <img src="/images/color-line-bg.png" alt="Bilde av Color Line som seiler" class="img-bg-top"/>
     <div class="container">
         <form class="row g-2 form-container" autocomplete="off" action="Pages/reisendeInformasjon.html" onsubmit="return validerForm()">
-        <h2 class="text-center">Bestilling av reise:</h2>
+            <h2 class="text-center">Bestilling av reise:</h2>
             <hr class="mb-3 divider" />
             <div class="col-6 row">
                 <div class="mb-3">
@@ -86,11 +86,6 @@
                         <option value="6">6</option>
                     </select>
                 </div>
-                <div style="height: 33px"></div>
-                <div class="col-12">
-                    <label id="pris" class="form-label">Pris:</label>
-                </div>
-                <div style="height: 30px"></div>
             </div>
             <div class="col-6 row">
                 <div class="mb-3">
@@ -98,27 +93,31 @@
                 </div>
                 <div class="col-12">
                     <label for="fornavn" class="form-label">Fornavn:</label>
-                    <input id="fornavn" type="text" class="form-control" placeholder="Fornavn" />
+                    <input id="fornavn" type="text" class="form-control" placeholder="Fornavn" autocomplete="given-name" />
                     <div id="errorFornavn" class="form-text" style="visibility: hidden; color: red">Du må skrive inn ditt fornavn!</div>
                 </div>
                 <div class="col-12">
                     <label for="etternavn" class="form-label">Etternavn:</label>
-                    <input id="etternavn" type="text" class="form-control" placeholder="Etternavn" />
+                    <input id="etternavn" type="text" class="form-control" placeholder="Etternavn" autocomplete="family-name" />
                     <div id="errorEtternavn" class="form-text" style="visibility: hidden; color: red">Du må skrive inn ditt etternavn!</div>
                 </div>
-                <div class="col-12">
+                <div class="col-6">
                     <label for="email" class="form-label">Email:</label>
-                    <input id="email" type="text" class="form-control" placeholder="E-post" />
+                    <input id="email" type="text" class="form-control" placeholder="E-post" autocomplete="email"/>
                     <div id="errorEmail" class="form-text" style="visibility: hidden; color: red">Du må skrive inn din e-post!</div>
                 </div>
-                <div class="col-12">
+                <div class="col-6">
                     <label for="fodselsdato" class="form-label">Fødselsdato:</label>
-                    <input id="fodselsdato" type="text" maxlength="10" class="form-control" placeholder="DD/MM/ÅÅÅÅ" />
+                    <input id="fodselsdato" type="text" maxlength="10" class="form-control" placeholder="DD/MM/ÅÅÅÅ" autocomplete="bday" />
                     <div id="errorFodselsdato" class="form-text" style="visibility: hidden; color: red">Du må skrive inn din fødselsdato!</div>
                 </div>
             </div>
-            <div class="col-12 price-container">
-                <input type="submit" value="Bestill" class="btn btn-primary">
+            <hr class="divider" />
+            <div class="col-12 text-center price-container mt-0" id="pris">
+                <b>Pris:</b> 0,-
+            </div>
+            <div class="col-12 submit-container">
+                <input type="submit" value="Gå videre" class="m-auto w-25 btn btn-primary">
             </div>
         </form>
     </div>

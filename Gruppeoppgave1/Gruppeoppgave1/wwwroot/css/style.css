@@ -26,8 +26,13 @@ a:hover {
     text-decoration: underline;
 }
 
-.price-container {
+.submit-container {
+    align-items: center;
     display: flex;
+}
+
+.price-container {
+    font-size: 18px;
 }
 
 .form-container {

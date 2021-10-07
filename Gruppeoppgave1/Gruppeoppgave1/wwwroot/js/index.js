@@ -42,10 +42,10 @@ function hentPris() {
         const valgtStrekning = strekning.navn;
         sessionStorage.setItem("valgtStrekning", valgtStrekning);
         if ($("#turvalg option:selected").val() === "Tur/Retur") {
-            $("#pris").html("Pris: " + totalpris * 2 + "kr");
+            $("#pris").html("<b>Pris:</b> " + totalpris * 2 + ",-");
             sessionStorage.setItem("totalpris", totalpris * 2);
         } else {
-            $("#pris").html("Pris: " + totalpris + "kr");
+            $("#pris").html("<b>Pris:</b> " + totalpris + ",-");
             sessionStorage.setItem("totalpris", totalpris);
         }
     });
