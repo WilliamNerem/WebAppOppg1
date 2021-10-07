@@ -3,7 +3,7 @@ const regexFornavn = /\b([A-ZÀ-ÿ][-a-z ]+[ ]*)+/;
 const regexEtternavn = /\b([A-ZÀ-ÿ][-a-z ]+[ ]*)+/;
 const regexEmail = /([\w\.\-]+)@([\w\-]+).(\w{2,3})/;
 const regexFodselsdato = /(((0[1-9]|[12][0-9]|3[01])-(0[13578]|10|12)-(\b([1][9][0-9][0-9]|[2][0][0-1][0-9]|[2][0][2][0])\b))|(([0][1-9]|[12][0-9]|30)-(0[469]|11)-(\b([1][9][0-9][0-9]|[2][0][0-1][0-9]|[2][0][2][0])\b))|((0[1-9]|1[0-9]|2[0-8])-(02)-(\b([1][9][0-9][0-9]|[2][0][0-1][0-9]|[2][0][2][0])\b))|((29)(\/)(02)-([02468][048]00))|((29)-(02)-([13579][26]00))|((29)-(02)-([0-9][0-9][0][48]))|((29)-(02)-([0-9][0-9][2468][048]))|((29)-(02)-([0-9][0-9][13579][26])))/;
-const regexKortnr = /\b[0-9]{4}[ ][0-9]{4}[ ][0-9]{4}\b/;
+const regexKortnr = /\b[0-9]{4}[ ][0-9]{4}[ ][0-9]{4}[ ][0-9]{4}\b/;
 const regexUtlopsdato = /\b([0][1-9][/][2][2-9]|[1][0-2][/][2][2-9]|[1][0-2][/][2][1])\b/;
 const regexCVC = /\b[0-9][0-9][0-9]\b/;
 
@@ -15,10 +15,12 @@ function validerForm() {
     const skrevetFornavn = $('#fornavn').val();
     const skrevetEtternavn = $('#etternavn').val();
     const skrevetEmail = $('#email').val();
+    const skrevetFodselsdato = $('#fodselsdato').val();
 
     sjekkRegex(skrevetFornavn, regexFornavn, '#errorFornavn', "Fornavn må starte med stor bokstav. Gyldige tegn: - og mellomrom");
     sjekkRegex(skrevetEtternavn, regexEtternavn, '#errorEtternavn', "Etternavn må starte med stor bokstav. Gyldige tegn: - og mellomrom");
     sjekkRegex(skrevetEmail, regexEmail, '#errorEmail', "Email må inneholde '@' og '.' f.eks. 'eksempel@email.no'");
+    sjekkRegex(skrevetFodselsdato, regexFodselsdato, '#errorFodselsdato', "Fødselsdato må være gyldig og på formatet: 'DD-MM-ÅÅÅÅ'");
 
     ifValidering(valgtStrekning, null, '#errorStrekning');
     ifValidering(valgtStartDato, "", '#errorStartDato');
@@ -29,6 +31,8 @@ function validerForm() {
     formValidering(skrevetFornavn, "", '#errorFornavn', "Du må skrive inn fornavn!");
     formValidering(skrevetEtternavn, "", '#errorEtternavn', "Du må skrive inn etternavn!");
     formValidering(skrevetEmail, "", '#errorEmail', "Du må skrive inn email!");
+    formValidering(skrevetFodselsdato, "", '#errorFodselsdato', "Du må skrive inn fødselsdato!");
+    
 
     if (error) {
         error = false;
@@ -51,7 +55,7 @@ function validerInformasjonsForm() {
         sjekkRegex(skrevetFornavn, regexFornavn, '#errorFornavn' + (i + 1), "Fornavn må starte med stor bokstav. Gyldige tegn: - og mellomrom");
         sjekkRegex(skrevetEtternavn, regexEtternavn, '#errorEtternavn' + (i + 1), "Etternavn må starte med stor bokstav. Gyldige tegn: - og mellomrom");
         sjekkRegex(skrevetEmail, regexEmail, '#errorEmail' + (i + 1), "Email må inneholde '@' og '.' f.eks. 'eksempel@email.no'");
-        sjekkRegex(skrevetFodselsdato, regexFodselsdato, '#errorFodselsdato' + (i + 1), "Fødselsdato må være på formatet: 'DD-MM-ÅÅÅÅ'");
+        sjekkRegex(skrevetFodselsdato, regexFodselsdato, '#errorFodselsdato' + (i + 1), "Fødselsdato må være gyldig og på formatet: 'DD-MM-ÅÅÅÅ'");
 
         formValidering(skrevetFornavn, "", '#errorFornavn' + (i + 1), "Du må skrive inn fornavn!");
         formValidering(skrevetEtternavn, "", '#errorEtternavn' + (i + 1), "Du må skrive inn etternavn!");
@@ -84,7 +88,7 @@ function validerBetalingsForm() {
     const skrevetUtlopsdato = $('#utlopsdato').val();
     const skrevetCVC = $('#cvc').val();
 
-    sjekkRegex(skrevetKortnr, regexKortnr, '#errorKortnummer', "Kortnummer må være gyldig og på formatet: 'XXXX XXXX XXXX'");
+    sjekkRegex(skrevetKortnr, regexKortnr, '#errorKortnummer', "Kortnummer må være gyldig og på formatet: 'XXXX XXXX XXXX XXXX'");
     sjekkRegex(skrevetUtlopsdato, regexUtlopsdato, '#errorUtlopsdato', "Utløpsdato må være gyldig og på formatet: 'MM/ÅÅ'");
     sjekkRegex(skrevetCVC, regexCVC, '#errorCVC', "CVC må være gyldig og på tre sifre");
     console.log(error);
@@ -109,6 +113,7 @@ function saveValues() {
     sessionStorage.setItem("email", $('#email').val());
     sessionStorage.setItem("startdato", $('#startdato').val());
     sessionStorage.setItem("sluttdato", $('#sluttdato').val());
+    sessionStorage.setItem("fodselsdato", $('#fodselsdato').val());
 }
 
 function sjekkRegex(variabel, regex, id, errorMsg) {

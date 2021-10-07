@@ -10,6 +10,7 @@ $(function () {
     fornavn = sessionStorage.getItem("fornavn");
     etternavn = sessionStorage.getItem("etternavn");
     email = sessionStorage.getItem("email");
+    fodselsdato = sessionStorage.getItem("fodselsdato");
 
     if (
         fornavn == null ||
@@ -35,7 +36,10 @@ function renderForm() {
         "<div class='col-6 row'>" +
         "<label class='form-label'>Etternavn:</label>" +
         "<input id='etternavn' class='form-control' type='text' value='" + etternavn + "' readonly />" +
-        "<div style='height: 162px'></div>" +
+        "<div style='height: 46px'></div>" +
+        "<label class='form-label'>Fødselsdato:</label>" +
+        "<input id='fodselsdato' class='form-control' type='text' value='" + fodselsdato +"' placeholder='DD-MM-ÅÅÅÅ' readonly/>" +
+        "<div style='height: 46px'></div>" +
         "</div>" +
         "</div>";
 
