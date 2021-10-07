@@ -62,3 +62,8 @@ hr.divider {
 .flexBreak {
     width: 100%;
 }
+
+.betaling-container {
+    width: 50%;
+    margin: auto !important;
+}

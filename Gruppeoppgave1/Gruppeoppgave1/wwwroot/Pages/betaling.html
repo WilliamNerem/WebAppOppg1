@@ -33,23 +33,25 @@
     </nav>
     <img src="/images/color-line-bg.png" alt="Bilde av Color Line som seiler" class="img-bg-top" />
     <div class="container">
-        <form class="row g-2 form-container" autocomplete="off" action="/Pages/oppsummering.html" onsubmit="return validerBetalingsForm()">
-            <label for="kortNr">
-                Kortnummer
-            </label>
-            <input id="kortNr" name="kortNr" type="tel" inputmode="numeric" maxlength="19" placeholder="XXXX XXXX XXXX XXXX" autocomplete="cc-number"/>
-            <div id="errorKortnummer" class="form-text" style="visibility: hidden; color: red">Du må skrive inn kortnummer!</div>
-            <label for="utløpsdato">
-                Utløpsdato
-            </label>
-            <input id="utlopsdato" name="utlopsdato" type="tel" maxlength="5" placeholder="MM/ÅÅ" title="Vennligst fyll ut utløpsdato i formatet MM/ÅÅ" autocomplete="cc-exp" />
-            <div id="errorUtlopsdato" class="form-text" style="visibility: hidden; color: red">Du må skrive inn utløpsdato!</div>
-            <label for="cvc">
-                CVC
-            </label>
-            <input id="cvc" name="cvc" type="tel" inputmode="numeric" placeholder="CVC" autocomplete="cc-csc"/>
-            <div id="errorCVC" class="form-text" style="visibility: hidden; color: red">Du må skrive inn CVC!</div>
-            <input type="submit" value="Fullfør betaling" />
+        <form class="row g-2 form-container betaling-container" autocomplete="off" action="/Pages/oppsummering.html" onsubmit="return validerBetalingsForm()">
+            <h2 class="text-center">Fyll inn kortinformasjon:</h2>
+            <hr class="mb-3 divider" />
+            <div class="col-12">
+                <label for="kortNr" class="form-label">Kortnummer</label>
+                <input id="kortNr" class="form-control" name="kortNr" type="tel" inputmode="numeric" maxlength="19" placeholder="XXXX XXXX XXXX XXXX" autocomplete="cc-number" />
+                <div id="errorKortnummer" class="form-text" style="visibility: hidden; color: red">Du må skrive inn kortnummer!</div>
+            </div>
+            <div class="col-6">
+                <label for="utløpsdato" class="form-label">Utløpsdato</label>
+                <input id="utlopsdato" class="form-control" name="utlopsdato" type="tel" maxlength="5" placeholder="MM/ÅÅ" title="Vennligst fyll ut utløpsdato i formatet MM/ÅÅ" autocomplete="cc-exp" />
+                <div id="errorUtlopsdato" class="form-text" style="visibility: hidden; color: red">Du må skrive inn utløpsdato!</div>
+            </div>
+            <div class="col-6">
+                <label for="cvc" class="form-label">CVC</label>
+                <input id="cvc" class="form-control" name="cvc" type="tel" inputmode="numeric" placeholder="CVC" autocomplete="cc-csc" />
+                <div id="errorCVC" class="form-text" style="visibility: hidden; color: red">Du må skrive inn CVC!</div>
+            </div>
+            <input type="submit" class="btn btn-success" value="Fullfør betaling" />
         </form>
     </div>
 </body>
