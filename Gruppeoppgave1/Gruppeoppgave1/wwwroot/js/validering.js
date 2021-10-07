@@ -3,7 +3,7 @@ const regexFornavn = /\b([A-ZÀ-ÿ][-a-z ]+[ ]*)+/;
 const regexEtternavn = /\b([A-ZÀ-ÿ][-a-z ]+[ ]*)+/;
 const regexEmail = /([\w\.\-]+)@([\w\-]+).(\w{2,3})/;
 const regexFodselsdato = /(((0[1-9]|[12][0-9]|3[01])-(0[13578]|10|12)-(\b([1][9][0-9][0-9]|[2][0][0-1][0-9]|[2][0][2][0])\b))|(([0][1-9]|[12][0-9]|30)-(0[469]|11)-(\b([1][9][0-9][0-9]|[2][0][0-1][0-9]|[2][0][2][0])\b))|((0[1-9]|1[0-9]|2[0-8])-(02)-(\b([1][9][0-9][0-9]|[2][0][0-1][0-9]|[2][0][2][0])\b))|((29)(\/)(02)-([02468][048]00))|((29)-(02)-([13579][26]00))|((29)-(02)-([0-9][0-9][0][48]))|((29)-(02)-([0-9][0-9][2468][048]))|((29)-(02)-([0-9][0-9][13579][26])))/;
-const regexKortnr = /\b[0-9]{4}[ ][0-9]{4}[ ][0-9]{4}\b/;
+const regexKortnr = /\b[0-9]{4}[ ][0-9]{4}[ ][0-9]{4}[ ][0-9]{4}\b/;
 const regexUtlopsdato = /\b([0][1-9][/][2][2-9]|[1][0-2][/][2][2-9]|[1][0-2][/][2][1])\b/;
 const regexCVC = /\b[0-9][0-9][0-9]\b/;
 
@@ -88,7 +88,7 @@ function validerBetalingsForm() {
     const skrevetUtlopsdato = $('#utlopsdato').val();
     const skrevetCVC = $('#cvc').val();
 
-    sjekkRegex(skrevetKortnr, regexKortnr, '#errorKortnummer', "Kortnummer må være gyldig og på formatet: 'XXXX XXXX XXXX'");
+    sjekkRegex(skrevetKortnr, regexKortnr, '#errorKortnummer', "Kortnummer må være gyldig og på formatet: 'XXXX XXXX XXXX XXXX'");
     sjekkRegex(skrevetUtlopsdato, regexUtlopsdato, '#errorUtlopsdato', "Utløpsdato må være gyldig og på formatet: 'MM/ÅÅ'");
     sjekkRegex(skrevetCVC, regexCVC, '#errorCVC', "CVC må være gyldig og på tre sifre");
     console.log(error);
