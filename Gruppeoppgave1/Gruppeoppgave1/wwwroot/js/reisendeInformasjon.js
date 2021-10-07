@@ -69,7 +69,7 @@ function renderForm() {
     let utBarn = "";
 
     if (antallBarn > 0) {
-        $('#infoBarn').html("<h3>Skriv inn informasjon om barn:</h3><br/>");
+        $('#infoBarn').html("<h3 style='text-align: center'>Skriv inn informasjon om barn:</h3><br/>");
         for (let i = 0; i < antallBarn; i++) {
             utBarn += "<div class='row reisendeInformasjon-container g-2 form-container' style='margin-right: 14px'>" +
                 "<h5>Barn " + (i + 1) + ":</h5> <br/>" +
