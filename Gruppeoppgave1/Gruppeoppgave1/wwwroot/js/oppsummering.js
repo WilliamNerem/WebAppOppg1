@@ -7,23 +7,19 @@ const sluttdato = sessionStorage.getItem("sluttdato");
 const antallVoksne = sessionStorage.getItem("antallVoksne");
 const antallBarn = sessionStorage.getItem("antallBarn");
 const totalpris = sessionStorage.getItem("totalpris");
-let valgtStrekning;
-const url = "/Strekning/HentEn?id=" + strekning;
+const valgtStrekning = sessionStorage.getItem("valgtStrekning");
+console.log(valgtStrekning)
+
+$(() => {
+    renderSummary();
+})
 
 
-window.onload = () => {
-    $.get(url, function (strekning) {
-        valgtStrekning = strekning.navn;
-        sessionStorage.setItem("valgtStrekning", valgtStrekning);
-    });
-
-    if (sessionStorage.getItem("valgtStrekning") == null) {
-        location.reload();
-    }
+const renderSummary = () => {
 
     let ut = "<div class='col-6 border p-3'><b>Navn:</b> " + fornavn + " " + etternavn + "</div>";
     ut += "<div class='col-6 border p-3'><b>E-post:</b> " + email + "</div>";
-    ut += "<div class='col-12 border p-3'><b>Strekning:</b> " + sessionStorage.getItem('valgtStrekning') + "</div>";
+    ut += "<div class='col-12 border p-3'><b>Strekning:</b> " + valgtStrekning + "</div>";
     ut += "<div class='col-6 border p-3'><b>Utreise dato:</b> " + startdato + "</div>";
     ut += "<div class='col-6 border p-3'><b>Innreise dato:</b> " + sluttdato + "</div>";
     ut += "<div class='col-4 border p-3'><b>Antall voksne:</b> " + antallVoksne + "</div>";
@@ -35,23 +31,4 @@ window.onload = () => {
     $("#output").html(ut);
     $("#price").html("<b>Total pris inkl. moms:</b> " + totalpris + ",-");
 }
-
-//const valgtStrekning = () => {
-//    $.get("/Strekning/hentalle", function (strekninger) {
-//        return formaterStrekning(strekninger);
-//    });
-
-//    const formaterStrekning = (strekninger) => {
-
-//        for (let strekning of strekninger) {
-//            if (strekningID == strekning.id) {
-//                return strekning.navn;
-//            }
-//            else {
-//                return "Ingen strekning funnet"
-//            }
-//        }
-
-//    }
-//}
 

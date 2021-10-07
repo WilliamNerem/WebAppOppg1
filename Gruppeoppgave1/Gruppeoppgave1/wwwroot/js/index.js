@@ -32,7 +32,9 @@ function hentPris() {
 
     $.get(url, function (strekning) {
         const totalpris = strekning.pris * pris;
+        const valgtStrekning = strekning.navn;
         sessionStorage.setItem("totalpris", totalpris);
+        sessionStorage.setItem("valgtStrekning", valgtStrekning);
         $("#pris").html("Pris: " + totalpris + "kr");
     });
 }
