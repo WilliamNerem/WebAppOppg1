@@ -91,12 +91,10 @@ function validerBetalingsForm() {
     sjekkRegex(skrevetKortnr, regexKortnr, '#errorKortnummer', "Kortnummer må være gyldig og på formatet: 'XXXX XXXX XXXX XXXX'");
     sjekkRegex(skrevetUtlopsdato, regexUtlopsdato, '#errorUtlopsdato', "Utløpsdato må være gyldig og på formatet: 'MM/ÅÅ'");
     sjekkRegex(skrevetCVC, regexCVC, '#errorCVC', "CVC må være gyldig og på tre sifre");
-    console.log(error);
 
     formValidering(skrevetKortnr, "", '#errorKortnummer', "Du må skrive inn kortnummer!");
     formValidering(skrevetUtlopsdato, "", '#errorUtlopsdato', "Du må skrive inn utløpsdato!");
     formValidering(skrevetCVC, "", '#errorCVC', "Du må skrive inn CVC!");
-    console.log(error);
 
     if (error) {
         error = false;

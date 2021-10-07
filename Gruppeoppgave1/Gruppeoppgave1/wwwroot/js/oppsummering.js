@@ -8,7 +8,6 @@ const antallVoksne = sessionStorage.getItem("antallVoksne");
 const antallBarn = sessionStorage.getItem("antallBarn");
 const totalpris = sessionStorage.getItem("totalpris");
 const valgtStrekning = sessionStorage.getItem("valgtStrekning");
-console.log(valgtStrekning)
 
 $(() => {
     renderSummary();
