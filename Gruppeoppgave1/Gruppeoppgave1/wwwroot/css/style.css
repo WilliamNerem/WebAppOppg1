@@ -67,3 +67,7 @@ hr.divider {
     width: 50%;
     margin: auto !important;
 }
+
+input.form-control:read-only {
+    background-color: white;
+}
