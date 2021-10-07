@@ -33,6 +33,10 @@ function hentPris() {
     $.get(url, function (strekning) {
         const totalpris = strekning.pris * pris;
         sessionStorage.setItem("totalpris", totalpris);
-        $("#pris").html("Pris: " + totalpris + "kr");
+        if ($("#turvalg option:selected").val() === "Tur/Retur") {
+            $("#pris").html("Pris: " + totalpris * 2 + "kr");
+        } else {
+            $("#pris").html("Pris: " + totalpris + "kr");
+        }
     });
 }

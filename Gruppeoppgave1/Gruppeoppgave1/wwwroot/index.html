@@ -48,7 +48,7 @@
                 </div>
                 <label style="margin-bottom: 8px">
                     Velg enkel eller tur/retur:
-                    <select id="turvalg" onchange="datepickerSlutt()">
+                    <select id="turvalg" onchange="datepickerSlutt(), hentPris()">
                         <option value="Enkel">Enkel</option>
                         <option value="Tur/Retur">Tur/Retur</option>
                     </select>
