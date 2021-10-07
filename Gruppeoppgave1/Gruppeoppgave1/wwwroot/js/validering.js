@@ -114,6 +114,7 @@ function saveValues() {
     sessionStorage.setItem("startdato", $('#startdato').val());
     sessionStorage.setItem("sluttdato", $('#sluttdato').val());
     sessionStorage.setItem("fodselsdato", $('#fodselsdato').val());
+
 }
 
 function sjekkRegex(variabel, regex, id, errorMsg) {
